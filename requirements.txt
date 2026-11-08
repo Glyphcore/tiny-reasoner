@@ -1,0 +1,7 @@
+# torch is installed separately from the CUDA wheel index (see Makefile setup)
+transformers>=4.51
+safetensors
+accelerate
+numpy
+pytest
+pyarrow

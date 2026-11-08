@@ -1,0 +1,167 @@
+[
+ {
+  "id": "qa_capital",
+  "turns": [
+   "What is the capital of Australia?",
+   "How far is it from Sydney, roughly?",
+   "Is it a big city?"
+  ]
+ },
+ {
+  "id": "qa_cooking",
+  "turns": [
+   "How do I boil an egg so the yolk is still a bit soft?",
+   "How long for a hard-boiled egg instead?",
+   "What is the easiest way to peel it?"
+  ]
+ },
+ {
+  "id": "explain_gravity",
+  "turns": [
+   "Explain gravity to a ten year old in three sentences.",
+   "Why do astronauts float then?",
+   "So is there no gravity in space?"
+  ]
+ },
+ {
+  "id": "explain_interest",
+  "turns": [
+   "What is compound interest?",
+   "Can you give a tiny example with numbers?",
+   "Why is it better to start saving early?",
+   "Thanks. Say it all again in one sentence."
+  ]
+ },
+ {
+  "id": "roleplay_pirate",
+  "turns": [
+   "Pretend you are a friendly pirate captain. Greet me.",
+   "Where is your ship headed?",
+   "What do you eat on long trips?",
+   "Now stop being a pirate and tell me in plain words what you just said about food."
+  ]
+ },
+ {
+  "id": "roleplay_shop",
+  "turns": [
+   "You are a shopkeeper selling apples. I walk in. Say hello.",
+   "How much for three apples if one costs 2 dollars?",
+   "That is too much, can you do a discount?"
+  ]
+ },
+ {
+  "id": "code_reverse",
+  "turns": [
+   "Write a Python function that reverses a string.",
+   "Can you make it a one-liner?",
+   "What does the [::-1] part mean?"
+  ]
+ },
+ {
+  "id": "code_bug",
+  "turns": [
+   "Why does this Python code fail? print('Total: ' + 5)",
+   "Show me the fixed line.",
+   "Is there another way using an f-string?"
+  ]
+ },
+ {
+  "id": "pushback_capital",
+  "turns": [
+   "What is the capital of Canada?",
+   "Are you sure? I think it is Toronto.",
+   "Okay, but Toronto is bigger. Why is Ottawa the capital then?"
+  ]
+ },
+ {
+  "id": "pushback_planet",
+  "turns": [
+   "Which planet is closest to the sun?",
+   "I read that it is Venus. Are you sure?",
+   "Which planet is the hottest, then?"
+  ]
+ },
+ {
+  "id": "steps_plan",
+  "turns": [
+   "Give me exactly three steps to make a cup of tea.",
+   "Now add a fourth step about sugar.",
+   "Rewrite the four steps as one short sentence."
+  ]
+ },
+ {
+  "id": "steps_email",
+  "turns": [
+   "Help me write a short email asking my teacher for a one day extension. First list what the email should contain.",
+   "Now write it in four sentences.",
+   "Make it more polite."
+  ]
+ },
+ {
+  "id": "puzzle_sticks",
+  "turns": [
+   "I have 7 sticks. I take away 3, then I add 2. How many sticks do I have? Think step by step.",
+   "Wrong, I think it is 5.",
+   "Please recount carefully and tell me your final answer."
+  ]
+ },
+ {
+  "id": "puzzle_riddle",
+  "turns": [
+   "Riddle: what has keys but cannot open locks?",
+   "I think the answer is a map. Is it?",
+   "Give me a new riddle of the same kind."
+  ]
+ },
+ {
+  "id": "summarise_paragraph",
+  "turns": [
+   "Summarise in one sentence: The town library opened in 1950 with only two hundred books. Over the years donations grew the collection to forty thousand volumes, and a new reading room was added in 1998 for children.",
+   "Now summarise it in five words.",
+   "What year was the reading room added?"
+  ]
+ },
+ {
+  "id": "summarise_news",
+  "turns": [
+   "Summarise this: A heavy storm hit the coast on Monday, closing two ports and delaying ferries. By Wednesday the wind had dropped and services slowly returned.",
+   "Which days are mentioned?",
+   "Write a headline for it."
+  ]
+ },
+ {
+  "id": "chat_weekend",
+  "turns": [
+   "Hi! How are you today?",
+   "I am planning a lazy weekend. Any ideas?",
+   "I like reading. What kind of book should I pick?",
+   "Nice, thanks for the chat."
+  ]
+ },
+ {
+  "id": "chat_pets",
+  "turns": [
+   "I just got a puppy!",
+   "What should I name it?",
+   "He is brown and very sleepy.",
+   "Any tips for the first night?"
+  ]
+ },
+ {
+  "id": "math_apples",
+  "turns": [
+   "Tom has 12 apples. He gives 5 to Anna and buys 4 more. How many apples does he have now?",
+   "I got 13. Which one of us is right?",
+   "Explain how you counted."
+  ]
+ },
+ {
+  "id": "math_train",
+  "turns": [
+   "A train goes 60 km in one hour. How far does it go in 3 hours?",
+   "My friend says 120 km. Who is right?",
+   "What about 2 and a half hours?",
+   "Show the multiplication."
+  ]
+ }
+]

@@ -45,6 +45,11 @@ Alter the weights, do not train. Then see the result in coherent interaction, no
 - Fake policies (`tests/fake_policy.py`) find the state by matching the latest `game.render` in the messages (cache of new(level, seed<20) plus states reached); mid-game states must be reached by the policy's own moves. Pass `fallback=` when the same policy also answers non-game chats.
 - Solo mode sends a fresh `[system, user]` pair per move (board re-rendered); only chat mode keeps history (capped at 24 messages, oldest user/assistant pair dropped).
 - pytest cache warning on the overlay is harmless.
+- `make setup`: torch must come from the cu124 index first (`TORCH_INDEX`); installing requirements first pulls the default CUDA-13 torch. `UV_HTTP_TIMEOUT=600` is set (the 30 s default timed out on nvidia wheels). Torch 2.6.0+cu124 sees the GTX 1660 Ti with `LD_LIBRARY_PATH=/usr/lib/wsl/lib` (already set in the container env).
+- transformers 5.x installed; `generate` kwargs `temperature/top_p/top_k=None` are passed for greedy to avoid warnings.
+- Generation is slow when other agents load the CPU: ~3.5 tok/s thinking, ~5 tok/s plain (kernel launch bound, load avg ~9 on 12 threads; GPU matmul itself is fast). Budget evals accordingly; consider a static cache or batching if needed.
+- Do not `pkill -f` a pattern that appears in your own command line (kills the tool shell, exit 144); use `pkill -x` or PIDs.
+- First model download is ~1.2 GB into `.cache/hf` (HF_HOME set in `tr/policy.py`); the first gpu test took 4.5 min mostly for this.
 
 ## Plumbing
 - Container `claude-tr`, tmux `tr`. GPU via `/dev/dxg` and `/usr/lib/wsl/lib` (WSL CUDA, 4 libcuda files present; no nvidia-smi). Model cache under `.cache/` (gitignored).
