@@ -1,7 +1,12 @@
 # tiny-reasoner
 
-Take a small open chat/reasoning model (< 1B params), change its weights (LoRA first, then direct reads and writes of weight tensors),
-and measure whether step-by-step reasoning improves on challenge-based systems (small games and puzzles with verifiable moves).
+Take a small open chat/reasoning model (< 1B params) that holds a coherent conversation, ALTER ITS WEIGHTS DIRECTLY (no training, no
+gradient fine-tuning), and see the result: does step-by-step reasoning improve on challenge-based systems (games and puzzles with
+verifiable moves), and does the model stay coherent in real multi-turn interaction.
+
+Edits are computed, not trained: directions found from activations and folded into weights (steering baked into a bias or an output
+projection, orthogonalising a direction out), closed-form rank-one edits, head or neuron scaling and ablation, task-vector arithmetic
+between released checkpoints, and hand-built low-rank deltas in LoRA form (A and B written from analysis, not learned). Gradient training is out of scope.
 
 ## Roles
 - The lead (Fable) designs, writes the spec and delegates building to subagents (Agent tool, model sonnet; haiku for lookups) with full briefs and
@@ -27,6 +32,9 @@ and measure whether step-by-step reasoning improves on challenge-based systems (
 ## Science rules
 - Every claim is a number from a held-out eval with a fixed seed set, against the untouched base model and against a prompt-only baseline.
 - Games have exact verifiers (legal move, solved state); no model-judged scoring. Report solve rate, legal-move rate, steps to solve, and trace length.
+- Coherence is measured, not assumed: perplexity on a held-out text set, a fixed set of multi-turn chats (saved transcripts, base vs edited side
+  by side), and the games played as conversations (the model explains, the user pushes back, the model corrects). An edit that wins the game
+  score but breaks conversation is a failure.
 - Every run is reproducible from `runs/<id>/config.json` (model, revision hash, data seed, LoRA rank/targets, steps, lr). Weights edits record tensor names
   and hashes before and after; a revert must restore the base hashes exactly.
 - Speed is not a goal; fit the hardware: GTX 1660 Ti 6 GB (fp16, no bf16), 12 CPU threads, about 2-3 GB RAM headroom on the host.
