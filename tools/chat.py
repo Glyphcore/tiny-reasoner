@@ -21,7 +21,7 @@ def main() -> int:
     pol = load_policy(default_config(a.variant, thinking=a.thinking, max_new_tokens=a.max_new_tokens))
     if a.edit:
         try:
-            from tr.edits.weightedit import load_edit
+            from tr.edits.recipes import load_any as load_edit
         except ImportError:
             sys.exit("--edit needs tr.edits.weightedit, which does not exist yet")
         load_edit(a.edit).apply(pol)
