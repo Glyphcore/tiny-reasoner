@@ -1,0 +1,9 @@
+.q/
+.venv/
+.cache/
+runs/*/
+!runs/.keep
+__pycache__/
+*.safetensors
+*.bin
+*.pt
