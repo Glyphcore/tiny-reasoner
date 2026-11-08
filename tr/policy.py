@@ -41,6 +41,8 @@ class HFPolicy:
         self.tokenizer = AutoTokenizer.from_pretrained(config.model, revision=config.revision)
         self.model = AutoModelForCausalLM.from_pretrained(config.model, revision=config.revision, torch_dtype=dtype)
         self.model.to(config.device).eval()
+        self._gd = None          # CUDA-graph greedy decoder (tr.fastgen), built on first use
+        self.no_graph = False    # set True to force HF generate
 
     @torch.no_grad()
     def generate(self, messages: Sequence[Message]) -> Generation:
@@ -55,10 +57,17 @@ class HFPolicy:
             torch.manual_seed(c.seed)
             torch.cuda.manual_seed_all(c.seed)
             kw.update(do_sample=True, temperature=c.temperature)
-        out = self.model.generate(**ids, **kw)[0, ids["input_ids"].shape[1]:]
-        n = int(out.shape[0])
         eos = self.tokenizer.eos_token_id
-        stopped = n > 0 and int(out[-1]) in {eos, self.tokenizer.convert_tokens_to_ids("<|im_end|>")}
+        stop = {eos, self.tokenizer.convert_tokens_to_ids("<|im_end|>")}
+        if c.temperature == 0 and self.model.device.type == "cuda" and not self.no_graph:
+            if self._gd is None:
+                from tr.fastgen import GraphDecoder
+                self._gd = GraphDecoder(self.model)
+            out = torch.tensor(self._gd.generate(ids["input_ids"], c.max_new_tokens, stop), device=self.model.device)
+        else:
+            out = self.model.generate(**ids, **kw)[0, ids["input_ids"].shape[1]:]
+        n = int(out.shape[0])
+        stopped = n > 0 and int(out[-1]) in stop
         raw = self.tokenizer.decode(out, skip_special_tokens=True)
         reasoning, text = "", raw
         m = _THINK.search(raw)

@@ -7,7 +7,8 @@ from typing import Optional, Sequence
 from spec.interfaces import Game, Verifier
 
 PEGS = "ABC"
-_MOVE_RE = re.compile(r"\b(?:move\s+)?([ABC])\s*(?:->|to|\s)\s*([ABC])\b", re.IGNORECASE)
+# explicit forms accept any case ("move a c", "a->c", "B to A"); the bare "A C" form must be uppercase so prose does not match
+_MOVE_RE = re.compile(r"\b(?:[Mm]ove\s+([A-Ca-c])\s*(?:->|[Tt]o|\s)\s*([A-Ca-c])|([A-Ca-c])\s*(?:->|\s[Tt]o\s)\s*([A-Ca-c])|([ABC])\s+([ABC]))\b")
 
 
 def _plan(state, k: int, target: int, out: list) -> None:
@@ -82,7 +83,10 @@ class Hanoi(Game):
 
     def parse(self, text: str) -> Optional[tuple]:
         m = _MOVE_RE.search(text)
-        return (m.group(1).upper(), m.group(2).upper()) if m else None
+        if not m:
+            return None
+        a, b = [g for g in m.groups() if g is not None][:2]
+        return (a.upper(), b.upper())
 
     def format(self, action) -> str:
         return f"move {action[0]} {action[1]}"
