@@ -27,7 +27,24 @@ from tr.policy import default_config, load_policy  # noqa: E402
 
 def optimal_actions(game, state):
     n = game.optimal_steps(state)
-    return {a for a in game.legal_moves(state) if game.optimal_steps(game.apply(state, a)) == n - 1}
+    out = set()
+    for a in game.legal_moves(state):
+        try:
+            if game.optimal_steps(game.apply(state, a)) == n - 1:
+                out.add(a)
+        except ValueError:  # move leads to an unsolvable state (countdown)
+            pass
+    return out
+
+
+def move_offset(text: str, fmt: str) -> int:
+    """Char offset in the reply where the move's first decisive token starts ("move 5" -> the "5")."""
+    import re
+    m = re.search(r"[Mm]ove\s+", text)
+    if m and fmt.startswith("move"):
+        return m.end()
+    k = text.find(fmt.split()[0])
+    return max(k, 0)
 
 
 def states_for(game, level, seed, rng):
@@ -56,6 +73,8 @@ def main():
     ap.add_argument("--seeds", default="100-139")
     ap.add_argument("--max-new-tokens", type=int, default=32)
     ap.add_argument("--out", default=".cache/inspect")
+    ap.add_argument("--at", default="prompt", choices=["prompt", "move"],
+                    help="prompt: last prompt token; move: the generated position that predicts the move's first token")
     a = ap.parse_args()
     lo, hi = a.seeds.split("-")
     seeds = range(int(lo), int(hi) + 1)
@@ -84,6 +103,10 @@ def main():
                     legal = act is not None and ver.legal(s, act)
                     opt = legal and act in optimal_actions(game, s)
                     ids = _ids(pol, msgs, enable_thinking=False)
+                    if a.at == "move" and act is not None:
+                        k = move_offset(g.text, game.format(act))
+                        prefix = pol.tokenizer(g.text[:k], return_tensors="pt", add_special_tokens=False).input_ids.to(ids.device)
+                        ids = torch.cat([ids, prefix], dim=1)
                     r = residuals(pol, ids, layers)
                     X.append(torch.stack([r[l][-1] for l in layers]).half())
                     lab.append((int(act is not None), int(legal), int(opt)))
