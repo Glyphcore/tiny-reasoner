@@ -42,6 +42,9 @@ Alter the weights, do not train. Then see the result in coherent interaction, no
 - `/work` is an overlay where uv cannot set file perms: venv lives at `~/tr-venv`, `.venv` is a symlink (gitignored). `sed -i` warns, still works.
 - `make` and `uv` are in `~/.local/bin` (PATH is set by `~/.profile`; in a bare shell `export PATH=$HOME/.local/bin:$PATH`).
 - `git` needs `safe.directory` (set globally already). No pip/ensurepip in the image: use `uv pip install --python .venv/bin/python`.
+- Fake policies (`tests/fake_policy.py`) find the state by matching the latest `game.render` in the messages (cache of new(level, seed<20) plus states reached); mid-game states must be reached by the policy's own moves. Pass `fallback=` when the same policy also answers non-game chats.
+- Solo mode sends a fresh `[system, user]` pair per move (board re-rendered); only chat mode keeps history (capped at 24 messages, oldest user/assistant pair dropped).
+- pytest cache warning on the overlay is harmless.
 
 ## Plumbing
 - Container `claude-tr`, tmux `tr`. GPU via `/dev/dxg` and `/usr/lib/wsl/lib` (WSL CUDA, 4 libcuda files present; no nvidia-smi). Model cache under `.cache/` (gitignored).
