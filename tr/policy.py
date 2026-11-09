@@ -43,6 +43,7 @@ class HFPolicy:
         self.model.to(config.device).eval()
         self._gd = None          # CUDA-graph greedy decoder (tr.fastgen), built on first use
         self.no_graph = False    # set True to force HF generate
+        self.answer_tokens = 48  # answer budget after a forced </think> when thinking hits max_new_tokens
 
     @torch.no_grad()
     def generate(self, messages: Sequence[Message]) -> Generation:
@@ -68,6 +69,22 @@ class HFPolicy:
             out = self.model.generate(**ids, **kw)[0, ids["input_ids"].shape[1]:]
         n = int(out.shape[0])
         stopped = n > 0 and int(out[-1]) in stop
+        budget_hit = False
+        if c.thinking and not stopped and n >= c.max_new_tokens:
+            # thinking budget: close the think block and let the model answer (Qwen3 budget-forcing)
+            raw_think = self.tokenizer.decode(out, skip_special_tokens=True)
+            if "</think>" not in raw_think:
+                budget_hit = True
+                close = self.tokenizer("\n</think>\n\n", return_tensors="pt", add_special_tokens=False)["input_ids"].to(self.model.device)
+                ids2 = torch.cat([ids["input_ids"], out.view(1, -1), close], dim=1)
+                if c.temperature == 0 and self.model.device.type == "cuda" and not self.no_graph:
+                    ans = torch.tensor(self._gd.generate(ids2, self.answer_tokens, stop), device=self.model.device)
+                else:
+                    kw2 = dict(kw, max_new_tokens=self.answer_tokens)
+                    ans = self.model.generate(input_ids=ids2, attention_mask=torch.ones_like(ids2), **kw2)[0, ids2.shape[1]:]
+                out = torch.cat([out, close[0], ans])
+                n = int(out.shape[0])
+                stopped = int(out[-1]) in stop
         raw = self.tokenizer.decode(out, skip_special_tokens=True)
         reasoning, text = "", raw
         m = _THINK.search(raw)
@@ -77,7 +94,7 @@ class HFPolicy:
             reasoning, text = raw.split("</think>", 1)[0].replace("<think>", "").strip(), raw.split("</think>", 1)[1]
         elif c.thinking and "<think>" in raw:  # cut off inside the thinking block
             reasoning, text = raw.replace("<think>", "", 1).strip(), ""
-        return Generation(text=text.strip(), reasoning=reasoning, n_tokens=n, truncated=(n >= c.max_new_tokens and not stopped))
+        return Generation(text=text.strip(), reasoning=reasoning, n_tokens=n, truncated=budget_hit or (n >= c.max_new_tokens and not stopped))
 
     @torch.no_grad()
     def nll(self, text: str) -> tuple[float, int]:

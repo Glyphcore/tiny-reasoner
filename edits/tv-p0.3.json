@@ -1,0 +1,1780 @@
+{
+ "id": "tv-p0.3",
+ "kind": "taskvec",
+ "recipe": {
+  "kind": "taskvec",
+  "other": "Qwen/Qwen3-0.6B-Base",
+  "other_revision": "da87bfb608c14b7cf20ba1ce41287e8de496c0cd",
+  "lam": 0.3,
+  "include": [
+   "self_attn",
+   "mlp"
+  ]
+ },
+ "changes": [
+  {
+   "name": "model.layers.0.mlp.down_proj.weight",
+   "hash_before": "6b85ce87ce6864d07fa54932d5aede01ce695fa43d1b6af33d19148751c8af5d",
+   "hash_after": "8015dcec1dbe229886be3fe6ffa3d1f817314f2f6d1cafa0d0922d2d718c7641",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.0.mlp.gate_proj.weight",
+   "hash_before": "6d98acc459fd69e292d67b7e397a2bb23f6dfb88a4860a5aa8066fec5977fd21",
+   "hash_after": "6eaf3720615261c7915511bb5196ded5180af4d62c42edd381e0628270f53bf5",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.0.mlp.up_proj.weight",
+   "hash_before": "23c11d7a14a930b46c913cc2cbde1d6ea108f42f5a0b1ecab669158ef35cf133",
+   "hash_after": "6f258a8202133ce7a8b5cc8398e03b1a37b04b6bc504fcd7dc2b77a8387de476",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.0.self_attn.k_proj.weight",
+   "hash_before": "884577a49ed595737f097f4df29cf1f2e7cd85219c28204df3c5bc0841281417",
+   "hash_after": "cb45cb171f01ad5f7ab79fd67d61f45fe3ed8621415294a96744c78ce09645ff",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.0.self_attn.o_proj.weight",
+   "hash_before": "310e640d2228ecad383c5598c2dc4b126f18c5407b25732e129e18199376a431",
+   "hash_after": "d2e4c9740375f1f73af4c9095fbabc7626b04cae13b4f74d6c69deb14acdeb12",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.0.self_attn.q_proj.weight",
+   "hash_before": "0ae263cc1b2708f5dff2d6e7050ae04cda69e53f08d138f30e1cd58201124a23",
+   "hash_after": "4238a0ec3069f95fb6b5c9e7c2b898ef0a23d1399573bccde9f9b2e328bbe51b",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.0.self_attn.v_proj.weight",
+   "hash_before": "515cb3c8c6edd6f06c117c059b4e708d2fc6cb83267465abe44c0cc60f011ab9",
+   "hash_after": "f5e0e0f683fb96b9c618d774696972848cff29d8fd0658b0e3095297bd95d43a",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.1.mlp.down_proj.weight",
+   "hash_before": "4c978730c7b2d9352224fa43e56c127ae98bf3850c23e2e3a920172197741e99",
+   "hash_after": "09961ac0c8ca8c1a2741648b86355c3d80a02778423ef2165739eaa9c68a3e14",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.1.mlp.gate_proj.weight",
+   "hash_before": "90f9502d37156831980d8f000694657e9659100dfd8c453aba6bf6d124ee2f88",
+   "hash_after": "11c054cf1d9e90c39827445d65b9087814cc2f5c02936da7feedcd245d8ddd14",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.1.mlp.up_proj.weight",
+   "hash_before": "670710713eecb8f3b85fae8fed6606d7b91ca2a20d5a2ab005827d0c13a9c71e",
+   "hash_after": "011ab84443d232dc3594ce289cde0b2429871c9ece299cc62472e9b50b9ae067",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.1.self_attn.k_proj.weight",
+   "hash_before": "07fef4c45a60bc369b3d2e3fbab9d7c00004d7b221391dd0d3952cff510c2096",
+   "hash_after": "97fb300c7aab0f3ca608e4b46c70d120736fd5ea5bdfc51891ff98c58c8adc24",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.1.self_attn.o_proj.weight",
+   "hash_before": "70a15c8503938b4e8065ccf1162282d2a929a6b518f9940360ab7a8186827a51",
+   "hash_after": "4559caaaf59c3b005fc297c569a79994336479c80780fb5d589e01322842ebcf",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.1.self_attn.q_proj.weight",
+   "hash_before": "083ac53f5dcc6a163d87849eb489cb72088e31ae1eff0974abfb449f52d6f3df",
+   "hash_after": "c78d9fed0fe7fea9fcf8e44eb9f80e1282bb22c95ed1f05b553b0a1a6bd20271",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.1.self_attn.v_proj.weight",
+   "hash_before": "e831190244e466d2f5184a64227d35b1ba979a5895ce786bd9456133decba2a6",
+   "hash_after": "8d63dfb6d53db3991640974b83d3b4276263f1e831c96617308a260bce6758c4",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.10.mlp.down_proj.weight",
+   "hash_before": "307b434aa514fa78a14ceca500f89e4cfbc47ac4980b6ee9e7ade8f9ae9a0b7e",
+   "hash_after": "4079e9c81b514dc0cc60fd9242d4c8388bd5e01ef9fa1377c71e0646b076c393",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.10.mlp.gate_proj.weight",
+   "hash_before": "91132d220aa91ab49966bf15a2c4e8075bfd3ac0c2afde06b543e01d9eed628e",
+   "hash_after": "148994b91b4e3110452957fc602d5476c79015d306ad7cee525d14ea92e7edcf",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.10.mlp.up_proj.weight",
+   "hash_before": "7c181e3e6d4d80dcf77cf95cd6fc023b24cc70c6d499fa2204b9fc07a7fd59fa",
+   "hash_after": "41528c50b6dd1a3767bd5702bb82d74d38d8c1f96140b2fc69a4f31a63f0bc7d",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.10.self_attn.k_proj.weight",
+   "hash_before": "b2c94d5332f27e4761f692bd4700cfd6759ed72979cdba6a257bef32d075dc35",
+   "hash_after": "60d1bb320496ee98658c84bbc3ab258b2165d4bb0bf8b30a2f054ac7efb0006b",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.10.self_attn.o_proj.weight",
+   "hash_before": "118bf0e7e6b6a5f031d442e5c5680f31f8465d062b715084c99cf506aaea42d2",
+   "hash_after": "9d5505e50dfc17b513368d0dfc1789e9a40ff4d8202b27e4aaa8eefecd40230d",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.10.self_attn.q_proj.weight",
+   "hash_before": "2c0ff672251cd13049a5dd2833a15e890c3b91a32a168556fb65ac36fa673f56",
+   "hash_after": "a56ad0d6ac1a71e850b9b3dee953f1e20fb96e894dae3cfc8b71d1a298063f60",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.10.self_attn.v_proj.weight",
+   "hash_before": "776b4ae25d2e96a41e9e2087e2ac6b05347cd4c474ffa7e0b8b358b63ff0c52a",
+   "hash_after": "4cfc3820fd68b0ef39a9b0c62ea9b1d38190cb144182d44ceb292203f8e37515",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.11.mlp.down_proj.weight",
+   "hash_before": "ea2813339e7d9de6300e6fa1ee4213287c991f98f4801d9187f0384d7bca9869",
+   "hash_after": "0c1cd8a8c4fd71912aab8ab72035732889eb3a901dc5377637ac4d4145cdb5a8",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.11.mlp.gate_proj.weight",
+   "hash_before": "83cf8eb36ab8712de81071b1cb4dcaf8434ba5cda1d75c0e838da19ba23c5c17",
+   "hash_after": "e3ed30b70994f5d8449da44d3756c3c1a97d6b7ead30a8d703454c3b515cf224",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.11.mlp.up_proj.weight",
+   "hash_before": "530a000b1569fe530cc9251f9f1db7e8976df9eed9e8932f6a9b9f1f4461ff9c",
+   "hash_after": "16603b5ee532e78641f95a3cd320dd7afd4999c8b6ef1cbcecb2aa3af4a91217",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.11.self_attn.k_proj.weight",
+   "hash_before": "deaa8611f326894e07d6d85ae50e230f66cf32f380452d25981e468a05d40b65",
+   "hash_after": "b9ec0eb9f674ada3ee868e0150350cef207f3babc801b7bb031d50602a65a629",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.11.self_attn.o_proj.weight",
+   "hash_before": "883a3be8394cc337c5c8e169be64d7df175b7406973c2b650019481a4813b2bd",
+   "hash_after": "f2a8db7323ab5c7b0f3b42f082931978cc1766e1fd71e82fef199d8013231163",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.11.self_attn.q_proj.weight",
+   "hash_before": "37963e630d76b13b6a97b95d41155d577e7fe820ef498817c196ff04120cc3bf",
+   "hash_after": "c01f0fb0758408173b3aee5abc77388045e162e7a7715afff8bb36f30f86cbe8",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.11.self_attn.v_proj.weight",
+   "hash_before": "bf7b2773997f4bf0821266a52222655a80d882c1edec6d7482dda52a99393136",
+   "hash_after": "398ef76537af1f0c6a7bc35c778fe27b2d9b152b5f33a037c263f49ce1ab94f0",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.12.mlp.down_proj.weight",
+   "hash_before": "a2cac77e2cc75d66753412cd0a608b3b7d6b298730dba493e80d2671b4f4a0d4",
+   "hash_after": "b79ff860c410e2d903c377014150a99a60ad2a6e7b763dd2511c44e7abe05748",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.12.mlp.gate_proj.weight",
+   "hash_before": "66192498e13b6fb914cb4c70f31764cb4080bff1fecb6328eb7bcb0ece2057b3",
+   "hash_after": "528c5b4905aefbde699ef4fb51ac4806a3d44e10884af894c6ecfbe59f158abe",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.12.mlp.up_proj.weight",
+   "hash_before": "62c0ffe8c1299c07d81831301dfd96ac1b7e2f80fdb1dd7eebae970eeb3a4b82",
+   "hash_after": "7e76f715ab3e9041fefb7d40d2118d4dc0d37096ead86b91ecfbef522102b1ae",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.12.self_attn.k_proj.weight",
+   "hash_before": "52bd06fc73b8abe6534f915aa2bc0a70af3f62c9ab23555f7fbf872d154c44d2",
+   "hash_after": "e6b981b6ae60b78e70a68e4b209814b1893b94346b83cc9773d46a2b9f6d8d53",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.12.self_attn.o_proj.weight",
+   "hash_before": "ab9237a6e0cbe4373abf6735e3d61550a802f26578f91049184f2f384864c946",
+   "hash_after": "df2d2aa48265c78484284cd872499f3cfc4a7e6c77a3f12dd59f978dd60a9cf9",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.12.self_attn.q_proj.weight",
+   "hash_before": "0584675f2d8e3fc36b8b08465c5517c29c1083c8ff7f5464c1de2ad4f693e313",
+   "hash_after": "c72fefec18dd574f41f38c8cf314c7eb58a27fe7f3289e2a21318ba2e121420a",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.12.self_attn.v_proj.weight",
+   "hash_before": "70f2d53ccf8bdb479729c3f4490ebf254a4fd9772121ba917f2351eb7195c123",
+   "hash_after": "51df5376dc433178b716165a45ad1cbe4508123900f18de44a60b73eeefcc308",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.13.mlp.down_proj.weight",
+   "hash_before": "c9804ebbc7d124d83717734d21fce9477763dcd5d5dbf8a2d6cbf28ebe846ee9",
+   "hash_after": "12a2db9d32973dd75c2d12f5b769330262855965815b9c832ac34ac1cfbf926a",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.13.mlp.gate_proj.weight",
+   "hash_before": "d2836e15a330a79016f897378351933f0395395433967fee39c62b5ac846260c",
+   "hash_after": "8502d01e6c39934145dfb56204e1668056fbd797f22bd4da7084b8cad2caf933",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.13.mlp.up_proj.weight",
+   "hash_before": "48a77b2a57c861d775cea3f5549c1602cca70ef1edb6494e6b37fb04c1f0bdca",
+   "hash_after": "6eca037cbb4342aabab617d3b6f9635b91ca2f210509007eaa133f9d3624bbfd",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.13.self_attn.k_proj.weight",
+   "hash_before": "393c0b093bd05193166fd773eb934eb43facaf2bebf80c7a27d7aded069c0e0a",
+   "hash_after": "c1776f63c90b042214d29d2d16b3bffa1419b8aaac1bdf64d310070fe55f543b",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.13.self_attn.o_proj.weight",
+   "hash_before": "88727e42a96b979359124bab721689303cbf7730cc28d10c4b85f7ec708a23cc",
+   "hash_after": "69ca2a7c87406de04bc7eede4139b4a32f05c97e38222d8559808ef3d192857c",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.13.self_attn.q_proj.weight",
+   "hash_before": "3cc65b98c62caeb0f68af76de89cfee2a46e1838f91fcc6758b09e2ad0a39469",
+   "hash_after": "76c7325efa4132b796090f1691e7905f6c899037391146b9db6193974fc5ff5c",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.13.self_attn.v_proj.weight",
+   "hash_before": "09104fd217f12e3d1b0c70f70742f25acfeca52edc2a9685d1327ce803121a32",
+   "hash_after": "287b1ece055111a3ee92bf3dd6b6395f228cce08b02f0274e4036bc48519c5e5",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.14.mlp.down_proj.weight",
+   "hash_before": "5640b776ccd3d7db6669e072fc30f5fea7fa77226d54e6478b15fd1f5f0dd9d2",
+   "hash_after": "f59e65cc52560b39cb6d0b08a4e5c61a2bf0e19e5a8b84f24a1e2e9081cc84c3",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.14.mlp.gate_proj.weight",
+   "hash_before": "1bb19c046dcde85df65c4d2561de50459d6a38656b4bf1cf8143ef4144a41d26",
+   "hash_after": "1b529b2c45285ebbe65c81b09840696dfab181a92ddc57d113e5866c867d68c7",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.14.mlp.up_proj.weight",
+   "hash_before": "6dd475e2d80ffc987f7436f07aa2f1346883c98b7a514827fbcc2dc7373e165e",
+   "hash_after": "4d0cefe7d8ca5757fd5a27379221ee2f1f1f92262f08df7269354cd55afe7512",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.14.self_attn.k_proj.weight",
+   "hash_before": "8f4f6df8e6fe78986b2c31c57ea35eaae8ad73bb4da415493141659ba9b4903e",
+   "hash_after": "3feb31a95178ae1ab2bb6846391a83c144d112fb2297287311c71d45f59392f4",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.14.self_attn.o_proj.weight",
+   "hash_before": "5b2702943d2a9207e4e1a3e17dd24edf05aa9c5c9ad1101f518ba1bc9afadbf2",
+   "hash_after": "cde5c7558bceadb9cb3043f31a3d761d4c2c204a838d1f8749d304257b0daeb8",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.14.self_attn.q_proj.weight",
+   "hash_before": "2048434001ba0b9c43da64efb9579bc04ce485cc55767de4330992d2d0eff52b",
+   "hash_after": "522fcf6500665e16bfbfa9bf485aa621bdc4d8fc826c5d574ba999f8755b7e8d",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.14.self_attn.v_proj.weight",
+   "hash_before": "b59ff12bd746f7e05866ea74073dfebc487408bb00bc75eeb9cd2bed7455e4b9",
+   "hash_after": "a75666863ce709535534a95cbe58f1987a100618cbab8f67524795d59254ee14",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.15.mlp.down_proj.weight",
+   "hash_before": "5b0c1db5d2800bf0110aa77bcf4220565b2255f33aa9e268e41d0a1f48c81f32",
+   "hash_after": "565d95986c40d46fdaf3386da14a487b169680d5fb68f7afe03b5e0f043620be",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.15.mlp.gate_proj.weight",
+   "hash_before": "e9b416ae86ead7b60e83df33f3dfb9c3fa14d798dce670ad0ec325c957f74535",
+   "hash_after": "e4d1747c7afdd7929e4b846d97fe47cbdb7bdac12b48a688880639c3e48802fe",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.15.mlp.up_proj.weight",
+   "hash_before": "f728a69e8463911d9ca499d63e51eceba5d6d095862cb937f8eee4e5ed204527",
+   "hash_after": "247c7d249dc2a6fad2229e160e7a58319e2a180948bc5d91bc5b84b368ea33d8",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.15.self_attn.k_proj.weight",
+   "hash_before": "ee491e185e33dd21478b7d2883cb20d1355dfdd70155a454a5e924cef29a94ff",
+   "hash_after": "211b3deaeee0a456a961162e637c81156d199159ab2a7fc24909d3bd57fc0b52",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.15.self_attn.o_proj.weight",
+   "hash_before": "685e6a0f57b99acd1537336f3fc70dbd0e74c2712f6e83cde1a4218e52fe4e43",
+   "hash_after": "2c9d2091415f7d4d5cb5614ce06e100eee244f6b3f98d674c74a6062fcc935df",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.15.self_attn.q_proj.weight",
+   "hash_before": "dcd28c6a72b33f8655a16b96b03f4ab82f061364421ef18ab073686ec5af31da",
+   "hash_after": "cbab94993014af88ddcca39178612a4ea2016a5bae7f552902c7292d4245f1ec",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.15.self_attn.v_proj.weight",
+   "hash_before": "374b3e0b57c8fc0ede6840c119f19056aacd62efecc616298d56d4e43ba66d01",
+   "hash_after": "c4dcd4a571e6ded34a87645dccc821eb784cc70cbfa1cc3e1beb647c4bf7497e",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.16.mlp.down_proj.weight",
+   "hash_before": "f1f05ff961ea8a2ced284b65303c92a5387bfe93add24ad7d8588aa5722cae68",
+   "hash_after": "46ad29a8e419d0e65436780bd40140b9ab8137cc9314311d1aeb27b9c7bd1247",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.16.mlp.gate_proj.weight",
+   "hash_before": "8f90ca69e2417d6505974d85a4f30c5fa34b39c728551665687a0b1e815917a0",
+   "hash_after": "c722aeeadc1510b4a2ade930da2bea8af1e60e6ee01d0af552ca4c6fb4bb8f71",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.16.mlp.up_proj.weight",
+   "hash_before": "a1972a4c9e2212603badde43149bffbb751b0f8a29f930252fa0d12d637160f4",
+   "hash_after": "042ba734705a3e7cbe30ea19ff920a3c54a7b5ebd4254eefe8c62a129bc251dc",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.16.self_attn.k_proj.weight",
+   "hash_before": "7b91aa32ee092692c6ab70345a44f495f7a4304917d953200fb24fd67daf90ec",
+   "hash_after": "830ce20c677029f4d95570e45233584d5e6a195d91718320211b5eefe2b12ec9",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.16.self_attn.o_proj.weight",
+   "hash_before": "a7b6d31c7b39fbac0ffb9d977b5da8e625a38b8e751f649c9571d0d83682bb34",
+   "hash_after": "4c4c17c0c35dd342e2cec99d1d5fbe66d1fdb286ecb7c52d5131879d747d6ad0",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.16.self_attn.q_proj.weight",
+   "hash_before": "b0a13ca508f346e795215906abf778936598b7b1d50a89e693615d65b8109cb5",
+   "hash_after": "7cac07e7507bd140c4edcb675c17e242365c517cda5795a15dbc9d305412b389",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.16.self_attn.v_proj.weight",
+   "hash_before": "757e9e650c22171e4db12cd83c897f95588ece3dee6d73c720d96effa018451e",
+   "hash_after": "dc4975cf2cb7e1ca615de1cb61e45e9fb4a21348226df71930d8378c4462ef48",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.17.mlp.down_proj.weight",
+   "hash_before": "28647f62477a07701fb0c5dc5aa49ed98e2b866bdaae269f09a642d99917afc2",
+   "hash_after": "db54383fda3c1b0447b9daac86170d162bcfc5788518cb95edb852108570c41a",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.17.mlp.gate_proj.weight",
+   "hash_before": "d7dd30d3cf727ca72bcdb13d71277410df24f8d3f3f47174120868b4ea3b3c77",
+   "hash_after": "20ee3c6fdd681c5b404e6932d3d2c130cc584b650eb940a4071195cb3e3005d1",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.17.mlp.up_proj.weight",
+   "hash_before": "8b06fcbd0ce424b2f9e035b9456fb50276e7c18e4a7566f02d22bba015d3b29f",
+   "hash_after": "c7d12fbaa0e9c1e94d1b5a5dd31446bb5f7e887f2a53cfff461a0894ac9f95bd",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.17.self_attn.k_proj.weight",
+   "hash_before": "8014daab1844e07c03556c9bcc810e62e0fb2e32d6869073b34feb7bf46c623e",
+   "hash_after": "feee6eedac0f828fb7278ee9ed62af6ad8f6de371f0a201f153597e023189d87",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.17.self_attn.o_proj.weight",
+   "hash_before": "a02f3f1298a30a80271ae0211c9cc655f35b2b3b6ed6a862f42f077ead83aaa1",
+   "hash_after": "0129794478aa93737890c813ddd757e9f9e531bee7cdffe0d3d3794a83fb638a",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.17.self_attn.q_proj.weight",
+   "hash_before": "d3f021fbe28232344616a79fe0906105e7060242e231ae77dd6339610c95118f",
+   "hash_after": "cc6d0ca84d99066ff83c5539e1303549c85adecdfa48ecdc71711d18213a1448",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.17.self_attn.v_proj.weight",
+   "hash_before": "5a567d0b99e1e1dc6096d8f218b5f0b95e4a324a5b5f12740c7664fd95026f13",
+   "hash_after": "75b1df51e1771b7fb4d15919b28e7eb65ea47aff9e0195bf636dc5f538eea43c",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.18.mlp.down_proj.weight",
+   "hash_before": "516155656387255581baf3bb7e84e1f07972b015ad0c6a60d5d4db89431efa37",
+   "hash_after": "ed9732a6d2f28affdddbf25574a598acf32a704d06ef4de1d24b7cc0dc4c0600",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.18.mlp.gate_proj.weight",
+   "hash_before": "c4e712157fe1a9f898bff7a554978747d9d6c52b371d57d86d110b2ce1a8fa94",
+   "hash_after": "1ed9f4f8aa4affd32a068ccd57b57f0be516f64790e006d72d767d981608363d",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.18.mlp.up_proj.weight",
+   "hash_before": "d99be2cd118a70a97124e91991352ea1d8742a625972d3ae51877e7e6c21a47b",
+   "hash_after": "87d93d839bc91da981fb063c5c24382196ab27024bb227db63ca205c15c89f74",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.18.self_attn.k_proj.weight",
+   "hash_before": "621dd9c4c33a4a70a3419d17caa86e74cd8ce9280436d532dd5c23e4bd7b35a4",
+   "hash_after": "71fcd2d28cab3e8b9a76328ecc5175d8de59fadaebba6464cbd457b6bbf5558f",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.18.self_attn.o_proj.weight",
+   "hash_before": "83eba5feb89d357f7323ba5361995fc412c56b980f6bd86d6c4185348f373e8f",
+   "hash_after": "06ba39f91d0156af2eaff455e4b2c6fe6ded97dfe9c38540ebf4fabe2972f61c",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.18.self_attn.q_proj.weight",
+   "hash_before": "048c83151b6e9445c05f650ce66efc47aa71ca14afd95e66260f4793bd23389a",
+   "hash_after": "3f95c5349bce5fce6867240d331d85ba9cc3561e6be04a15d17c30b9b668d3ae",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.18.self_attn.v_proj.weight",
+   "hash_before": "20eb33884656ce5d9dacca2a1eb82871f7d78828237c5ef9c2b5d8c2b9e00ac1",
+   "hash_after": "457fd89f156e909fedf14f9e5f30cc4c743f43d10f7ef62360cc16f7665d60b1",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.19.mlp.down_proj.weight",
+   "hash_before": "fda45aa7c1a9fec867b4da90c563315d8aff5c8a9b1fdd47da277798cc0f64f3",
+   "hash_after": "814e814b8c0c09971563b3dc4ef57c64e8ab5a0be537976fd8cc74eb374350ab",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.19.mlp.gate_proj.weight",
+   "hash_before": "7d0b06189e2dc1f49a052ffbba2c297725023ed4bd07d32f7697fa830e4e15c1",
+   "hash_after": "33040d5a3b8f641436d7b0b3a31596a6b11fe57b4fad9025ab23278a057031c9",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.19.mlp.up_proj.weight",
+   "hash_before": "34aa054d20baa93207ea590987d5d870cdca94cdc54d104ea9558f0299957f61",
+   "hash_after": "592215b121dccc1e569af3170aae39c9c36889261c63130800a68d4cbe860fdd",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.19.self_attn.k_proj.weight",
+   "hash_before": "edd7c81745a76bbe054f65a9f49d4c3966cb760261868c4fb1578e2535b9de80",
+   "hash_after": "51d243ccba09ed90e6ab24b417d54479ad9fca034887abbc19fb8838f9a740b9",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.19.self_attn.o_proj.weight",
+   "hash_before": "13320e970198fe05c00ae86f65065ee3f8d329296f69a94e171e24f841f1ea3a",
+   "hash_after": "72e314ab3df318bada0d69021609588ec741bf8d992a51e59b09ed81ecdadabf",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.19.self_attn.q_proj.weight",
+   "hash_before": "15c6bc74a1562b053e658510a90a380a3ff1fa77495a80ab1ff3e8e21a5b09de",
+   "hash_after": "b03ab20c81d5b32b0d57002f598f43378a74fbc40ef86db52801461f019964ee",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.19.self_attn.v_proj.weight",
+   "hash_before": "01dffe31f774de4e6a15ecdf3a0ebd3ca51aa1ce3f28649ca830921a201e5450",
+   "hash_after": "1c40e4b951f91efe6fa7ee0e7d1cef36e5327e60cb73be166f790598b51d7245",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.2.mlp.down_proj.weight",
+   "hash_before": "be48469c800a92de2ea7c823f44c2c1d0196c1ba1a7cc51eecce39e17526ea4c",
+   "hash_after": "f11ae143dfa19f54afb7d80047ea9b85863f45ceb416519c3eab9215c9361872",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.2.mlp.gate_proj.weight",
+   "hash_before": "efd011330ffa6f9fb1fb2ee5aa226acac5bf5dd75759f1cbf9cbbee35a73e035",
+   "hash_after": "95d0bd55578c9bd790405edd0858723f21dfb00ec52b1e984ab9a0d3763d4dfa",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.2.mlp.up_proj.weight",
+   "hash_before": "b0ee5882c3f92ae2e6ca70fc5ef8ecb03d89b2b585062ff3d7e43694e659f221",
+   "hash_after": "d7f13ae41a98af7ebf7a584edc8208766968ff0f989d06f656a08b652daef683",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.2.self_attn.k_proj.weight",
+   "hash_before": "9b52f127d877593ca89856f5fcb156ff9c4a9f23418cc428ee27a54695d441d4",
+   "hash_after": "1a064ed22361c178c36f35096584e6b2b26923e9c92ad84801ebba41139e0443",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.2.self_attn.o_proj.weight",
+   "hash_before": "d530bfe59b638dedfdf1c64da1aa32f7edc86b5fc9b76cc4ca4274ddfc7c7a8a",
+   "hash_after": "37368b1ff3ea143d2f7546f4dbad5cdf6b62f9b1621d218c36f25820b7a60e03",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.2.self_attn.q_proj.weight",
+   "hash_before": "05a03230f8cafd01a9345ca9eaa29f519d94e2645aee5b34dbcf22f49f25ac46",
+   "hash_after": "63bd01c6e7c5926a4012435013b76ded290c34eb7a060b3a3e79b4952861cc15",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.2.self_attn.v_proj.weight",
+   "hash_before": "2d94c76cacade8e77aece3b25a13ba2313cd56f6e2abbe78acaef756c1a6a8f7",
+   "hash_after": "fc1da51d7091f00f45664ef849e7b082ee27a77090390b8f992511e6164f243e",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.20.mlp.down_proj.weight",
+   "hash_before": "c40f31f4d87d0831722e74568fc759f656059d8654aa6d40fa8558fe30b7e34a",
+   "hash_after": "dc0ed61bcc90787a7d4120c88d0bdc84e665113cda403832e64f44b3facc7f37",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.20.mlp.gate_proj.weight",
+   "hash_before": "eb682b09269595b2f86d9de8b26d42457f3f036204962b2d8cea1cd7f475acca",
+   "hash_after": "78152eb79b764959acd30d80c034503e7823f8e9ee578189dbb616c9e03645c6",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.20.mlp.up_proj.weight",
+   "hash_before": "13f3917aaf81520da90922097426f96c7826aea389139afcb828fb71f90d6045",
+   "hash_after": "ed92ad8a62a12855524644da3c607378328b8ecbb745c0a3c4bafb6570cf8c78",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.20.self_attn.k_proj.weight",
+   "hash_before": "00240df84698035b744217d2a0df58d6e56ade006a6adff8a4c4c61ed7c50489",
+   "hash_after": "cdd3b3123c8ca92325bf6ed7a09cbc958b3e15b4952c7881808820ebd7ee33a8",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.20.self_attn.o_proj.weight",
+   "hash_before": "f48f1a399931057caffc3793ccfa96e982e4c31045f263737f5df37a8df0b2c4",
+   "hash_after": "d495b21ded85d3ff8b45cf780aa9fdf408255e5927533b47b99cf29b66eda55b",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.20.self_attn.q_proj.weight",
+   "hash_before": "cc79fa5fb637dde6fd8d7d36c5b48caff757bfc0b4c6fafda0446cda0193c598",
+   "hash_after": "82924ddc3526b4f99faf7ff3ce96f534f7f8758cf0864ac419ef574271cc1b3a",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.20.self_attn.v_proj.weight",
+   "hash_before": "3d1204f9cfad88af2e0fdf4a03e65850986d6611810bc7a8d7dbb0c6fa654c4e",
+   "hash_after": "07049c3bfb7471bf2a33e1a0be29558e107d0b006245146d6acdc928201fee26",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.21.mlp.down_proj.weight",
+   "hash_before": "b0a8d5631761840158ec28bdf67be38e781ac677a351baa8ed618ca24c6556be",
+   "hash_after": "ef46ba9dc1c7887f55c74dc262c03e80fcfbe1152361c1238477ec97d9f9772b",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.21.mlp.gate_proj.weight",
+   "hash_before": "b0d9c5a36721ab2b3ebf590231e59fcce551364c349d1e123c52b712fe155564",
+   "hash_after": "04b899d6d5fd1b58a47b8a8a57b3ecafb0cc469a5f72977a2601af8c85527276",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.21.mlp.up_proj.weight",
+   "hash_before": "a58f91d859b3a84c63eb7f5a98f15c6a3b178ec5410469ad56d72fff080f0465",
+   "hash_after": "3cdadc9c1160cd6ae71ec0832ef857c1752b8f63453115f31813f39c412acc3a",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.21.self_attn.k_proj.weight",
+   "hash_before": "6509b95695fd0b0768d35ce2bdc38b04af1c9ebfe099acebcb926e70ce095b3d",
+   "hash_after": "a751d0e83ad96e0650341602f5283bf47e58f57dd6dd52d29d4f2c54f1c1d725",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.21.self_attn.o_proj.weight",
+   "hash_before": "91abf5c0f307482ba452d80ea2aa79bc9e875e73cd781acde280aef9327054ed",
+   "hash_after": "85831373231c5e69272648c05801778dc0714381cd9c0cd428cd0a0dc941a812",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.21.self_attn.q_proj.weight",
+   "hash_before": "d8eacd8d6519b4c69b4a91b234e82f799e3da8d534747f9a6fed5a5c993de8fc",
+   "hash_after": "4142ab44b3a5d0b7ebaaa9c67a3879690ae7db536a61794ce994a901fdd60303",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.21.self_attn.v_proj.weight",
+   "hash_before": "bc57efcc8af886f10a9b49746f067115e0fbfbb7c7a02a88af4e5e38f0ac8bd0",
+   "hash_after": "4d30b8a4668f3508a1356b60f0d39cc503b2af29a3d918436eed5401706b1eda",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.22.mlp.down_proj.weight",
+   "hash_before": "24ca10467cf5e85caf58db3134326e9076cb58dc5fc1a44c266e2f25983fe36c",
+   "hash_after": "846a74d37e890aa7ba4b5252888c1df6f40ed2292803cf5a2fbca1efe1f77b95",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.22.mlp.gate_proj.weight",
+   "hash_before": "83c8b28ab7d46ada0d35895af6e34180f62004a4c9d4a2cc9b6750621ec7083f",
+   "hash_after": "b3a8fb0dbeb7393e699677c82e188413b277eca27ad965599fe68de577ca47fa",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.22.mlp.up_proj.weight",
+   "hash_before": "eb1dbc57a62e76c125e51d503db3badf7c2b427fc28e277330523622968a63f4",
+   "hash_after": "7e29fa912b5e89b7d5e9813092cbee0da06cfb4fb971308b562d7321850a4cd4",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.22.self_attn.k_proj.weight",
+   "hash_before": "9ef47d6fce9875b5f877603d6c6d2190c2ee08e68f3337a841c43d9d81d3a679",
+   "hash_after": "449425557f12fb05c3ac66ce24a7a8040079e434272bf56ca5602905db7d837c",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.22.self_attn.o_proj.weight",
+   "hash_before": "48b8f1f70a4ddd0880e9c012069b4fa3685310709a7bb6983d3447e7dbfcd96c",
+   "hash_after": "eddabeb86a79aabe397a54bcb902da0f595d6720a5ebe272c4621efddbc69418",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.22.self_attn.q_proj.weight",
+   "hash_before": "b2871ea348a6439445e82d5fadb8bac25026defa961d1adba3f8ec5897182618",
+   "hash_after": "7717a3bb6105465f97d7ee1e0667a9094dddd6b24653fd3923894e74d674e19b",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.22.self_attn.v_proj.weight",
+   "hash_before": "afb0b4814d073306899a60035ded72dd3efb17e13f54d048ab54ff456ff7d1bc",
+   "hash_after": "f7aa6d15fee0a9e066ca3acc728cb44bbe3864294be510f15b3ac1995381d2f3",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.23.mlp.down_proj.weight",
+   "hash_before": "178ac8a2f0b5ec65a0206b0eed56b42ea1f186bb18e58761f10ebefb96c7d2c4",
+   "hash_after": "3d6ff5f02a01d212f82ca0d8a68e2581b4aa056d9dc990291fe529e43e9489c5",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.23.mlp.gate_proj.weight",
+   "hash_before": "a8f33c82c52fff6bbfb1c6cf5c98e837be8d776a0710b774299cf0947d05ad48",
+   "hash_after": "6da7eb4d29dda123503ee2c6cc1342ffef0e40611a92979071a374d4cdd92c02",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.23.mlp.up_proj.weight",
+   "hash_before": "e68b34e1dfabc955717a0ab0bb162864577e56c70cb4b2d550438c746e06c251",
+   "hash_after": "103dfe943f8e7f6de69ef5a24abe633c4517b21e644e980226eec750bbc2eccf",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.23.self_attn.k_proj.weight",
+   "hash_before": "d1cedb2f86fc18d59f365c01819aea830c5b29c7aa69fbecdd8bb36ef961f441",
+   "hash_after": "67956ac7ba93605730c7e9dcbb2861f00fa71cbfa2dcaf80d638a0f3d3cc19f2",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.23.self_attn.o_proj.weight",
+   "hash_before": "3e61c2a6641811fe6b67657d564658c28dabd6fe75568d0d2222e902ca012664",
+   "hash_after": "ddf440f050f2ed30671d6b6f30d948fe2eae302f810ad76914412d43124cc447",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.23.self_attn.q_proj.weight",
+   "hash_before": "8c702558cc9292cbf66772fc6eb47b053e040917cc3731efd8e2dcb4b71e8ee1",
+   "hash_after": "d223575f9077b4c31a128cc77218ac0586cc75285da736e56b19f1101be37c2e",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.23.self_attn.v_proj.weight",
+   "hash_before": "467c83357abd2d944c3414cef12a2a2ca8bfa365ebbcf02f5a5ec9208082d44a",
+   "hash_after": "9728cd8aadeb81defef17874bb5477f56ae81901adb4d4b3497ea8ce9a6121f9",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.24.mlp.down_proj.weight",
+   "hash_before": "1a8b3c15ff0ec391ebfdc5a326669c8636fd1672e4b58e8ab4073ca7f452df03",
+   "hash_after": "963d85d96515d99420bdb60c8a10b4dddc90ecccba65c1eb51cfab1df1b48006",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.24.mlp.gate_proj.weight",
+   "hash_before": "8c7eeb6264ac2521c2c41fd7ccaba642ca13913877626d6fd288b7dcff109159",
+   "hash_after": "e2640417a607398cfff6a0300bed2e4432b77fd765e6e0de38bd835f5ec32c5d",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.24.mlp.up_proj.weight",
+   "hash_before": "57e412c9c33b9ae4bd87b7a3de8db80d41a374de171985ae40776121b4b30e78",
+   "hash_after": "ff896f9cb4d569aa0f0cd9bda3810f3f7a27c22d046ab736a4836e9201011f1f",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.24.self_attn.k_proj.weight",
+   "hash_before": "ed35eafb3c586d01646623fbed0b010ebfbee9c0e55049ca5083e9320f323df2",
+   "hash_after": "3fc2ac69412ac183dcb3786a932c04a677ffc44d15465bbb1b5b7384ef56dee4",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.24.self_attn.o_proj.weight",
+   "hash_before": "7df62dc3fb1d7dae039defcc30e7a09f7cb194d4ec591b609c36b5562e9da3aa",
+   "hash_after": "eacc400b09d831600bf0950e0caf1dfe84ec298be8e11ad8f01b0ebd74cdfe4f",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.24.self_attn.q_proj.weight",
+   "hash_before": "891f4aacaf4238794961bb470fb698dbc6b25ca0f1e835245642d7c1750b2818",
+   "hash_after": "87523d83918d21b8df1c6d67e40e0a4f2b9bc51576b7be4ced63f2acebf72ffd",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.24.self_attn.v_proj.weight",
+   "hash_before": "9e5e410aaa973a17f9ab4d4d1bdafdc874975872e97c4211e0beab4b5080dd0b",
+   "hash_after": "60e65dc94a739d92611259a6c51a842eb3ae90e2c57a428265ac0928ce55df7f",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.25.mlp.down_proj.weight",
+   "hash_before": "b047949871ee4072815b820eb9da5b7f5a5aa9608d4b12bdd60c8433f79e7ffa",
+   "hash_after": "bb30bde1d2d941414b7b65bb4277e039f37296c6abb4c099f3f028c9b1d6188f",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.25.mlp.gate_proj.weight",
+   "hash_before": "de286d0f6bfb6e352fe241f100cae03ebdb3a8d44a5d4f30e10cd107a5294e92",
+   "hash_after": "32119d8acec9141041bb059787b47d5077344fe975c0b5486dad7af402b1a82d",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.25.mlp.up_proj.weight",
+   "hash_before": "e2439a493709aa7524396e03c19868c9fe72be55f93a3dbf6b9153e6b6493529",
+   "hash_after": "8bffd6e6b37c7ff120a4cc1d6d48cb6edb807cbff3cad1b72a92c717e07ade69",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.25.self_attn.k_proj.weight",
+   "hash_before": "002a8dd4beba5c25bfe866f3b4c07f057b7dce95cf182dafa247efd80967af14",
+   "hash_after": "c0352eddd9c66446ca974f14fd0501554639c5d07542da6c0c73c684507b8d61",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.25.self_attn.o_proj.weight",
+   "hash_before": "52c8697342ae24996e15b2db45454623c880f815c6d4ed23683714743cef6663",
+   "hash_after": "6a883dc0b1d6905b48138e4215e0ac8cd7f0eb98dd2e417b137fa730966a8150",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.25.self_attn.q_proj.weight",
+   "hash_before": "43d06a853015cf384386118edfc13409fed42d212d03fb648b865672a05cb3f1",
+   "hash_after": "d6521e94f58505695f878eb4782e8e4c82f029491cb61fec36e44459d4be62f4",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.25.self_attn.v_proj.weight",
+   "hash_before": "4c2011fdd6ef1372f517b9e435dd56d4dfc027ae99d74b2ce120ad13cdf215a5",
+   "hash_after": "26891414346fe3b7681edb9601cbb423a5815656a45499a48ccbe17f56aacef8",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.26.mlp.down_proj.weight",
+   "hash_before": "8a4707ab78ef4841b1211b08421a890dd82fcbd413f0fbdf489b398ade1c44fc",
+   "hash_after": "e9e343ac7964d322a0a643a32626ff3f2f0556ac726c898e74f7b38a76be3a85",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.26.mlp.gate_proj.weight",
+   "hash_before": "ea677f7dcf111213313a28fe5b96cb858647fb18369a1d76bd1229068ca50ee6",
+   "hash_after": "1e4656a8789c6159b9aeb9e17270d7abf5feac3db952fbcf280bb6e06e005735",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.26.mlp.up_proj.weight",
+   "hash_before": "49d9275a9a0857b173c3749e7bd410128712d62cf9a422be3e18e9c331d64acb",
+   "hash_after": "17a492fcf1165141646fc138aece56d9aac8fdcb17aa33e2a9d9f03c9cd12122",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.26.self_attn.k_proj.weight",
+   "hash_before": "7092fbdd813f9f4412b1e38365c0b57134c99f64620088588753577aee9efa56",
+   "hash_after": "55cab8ed1efa04b72dee4dbe2ca9ade92a6e54641324b54ce0c3100b2dc64850",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.26.self_attn.o_proj.weight",
+   "hash_before": "d240b272f6c3df04b59eb9aed474be5ea1e55374c04044ee14df91b33742b5de",
+   "hash_after": "b1592c0ec3e5152c143e02897027d8eb264324ab2588cc8e265721096e762354",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.26.self_attn.q_proj.weight",
+   "hash_before": "9950313f243db7f3ab001e46f609f8e072f488c927e266793c6d56d0472180b2",
+   "hash_after": "cf8924312a11479f9445bb57ceb5bb60797b0e91bf0d24e5e29d1d19d39aade1",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.26.self_attn.v_proj.weight",
+   "hash_before": "c5bdfc6f23916a5b1c8fa6848c00f858113832ecbc501a47c1b59f05424a570f",
+   "hash_after": "90932613d883f12f2711b5b70a2e47cab45a6151ea7bc12936b41a11b012dcdd",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.27.mlp.down_proj.weight",
+   "hash_before": "085fd675dcc3f57179dddf34de7e7721a35e530d2e81113726011550c904ceba",
+   "hash_after": "02d699cd016591765fb87f069568298c64a4fb884dbf94cb707a160cb0caa575",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.27.mlp.gate_proj.weight",
+   "hash_before": "8c915fdf32ac13ffcc5f22f329950cbd98bc7c4b072ec58aff954fb9b94306be",
+   "hash_after": "82dc502687d3afa16099769c681756ca200078b6acef7b7c1e6a0f7fb8f81b62",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.27.mlp.up_proj.weight",
+   "hash_before": "72e7de3bbe4b53a737b2c428259c3d4c706d64ede7b707a96bb470c69c657962",
+   "hash_after": "d131b90765cc9149981431b8850f4ef464e951a5e79447c42340629828f36b0e",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.27.self_attn.k_proj.weight",
+   "hash_before": "b932717f400a12d8e5ecb9acb4ddec0c65903eed3e694f4abab0362b69b80f1f",
+   "hash_after": "f7de991143541f60f382f4922c4ecb9e6555e53f33b7e61994f5d5725ec0ae32",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.27.self_attn.o_proj.weight",
+   "hash_before": "2b017da56e4a66bb3c3b2990f81c9fa21ecf98a2f41fae560aae03e670e79fa7",
+   "hash_after": "cda5e551b95b8694116fdbb7ba94c69ad3c49e3354c92f4dfc2916146bc6636e",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.27.self_attn.q_proj.weight",
+   "hash_before": "8592c798c24bc577be0bc1ad914849392e870422f7f319ea813237b402bf9eeb",
+   "hash_after": "879daf9ce13f81d084650e8ffe2d19c59a4b70c76515a7d690a67ffbb4a54ccc",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.27.self_attn.v_proj.weight",
+   "hash_before": "c99c0d298d5ea51c0fc2f3472e5dc42a0251112226a1ead78e2e8b6da2b9b3fa",
+   "hash_after": "3aa72596ae1ca68463299b9e93591c5cac6c1eef21e947a4072a9ab5455723df",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.3.mlp.down_proj.weight",
+   "hash_before": "26204d98e9d2eeaa0cdb34617d7f2527a1e30c11ff3380720041b5a225d300ec",
+   "hash_after": "077fabfa61b4416f243c6ef69929aca78142a48c0727ae7404ca1c0d5614afde",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.3.mlp.gate_proj.weight",
+   "hash_before": "7ed0dca1f75ab4548e1e5c5ed3068baddc29cc820e522bf7b93301a672d49db4",
+   "hash_after": "3f6ee9ef137fc356278d5645ff5e9b29dded0286675f70505d7b0378751d8647",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.3.mlp.up_proj.weight",
+   "hash_before": "6b8c0b9c75d033d7fb27a7f50723840163f663edd8944e9d5f5214ab0cebf0a9",
+   "hash_after": "c7396573fe546b027af8edf1d10c0a12ec00eae6a533c12eaf5148b3748f3afd",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.3.self_attn.k_proj.weight",
+   "hash_before": "7670a59a61e9bbf5d9a3fcc24860856fc06cd1d130e168dda7b21a064e70ec17",
+   "hash_after": "01622bd30b9767b8af77fb6043404dee9fde80158154927b77e3a75dbffe6f54",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.3.self_attn.o_proj.weight",
+   "hash_before": "abd80b7da1d9db658b61a0c94b9a8432d195610781a486dede6e6b13608480a9",
+   "hash_after": "a6cff470c444b87650b62de87d05b58f085302fd50d5593764e877aaca2fec9e",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.3.self_attn.q_proj.weight",
+   "hash_before": "7958ed6a062a192987878487bb8d20584f6b653d886065d1ff5d8d3c7ae9b446",
+   "hash_after": "09e1a1596606290b09787f491a3b202721c8807fc425a7e70f19c8b56f779950",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.3.self_attn.v_proj.weight",
+   "hash_before": "9395dc62a066d1e3762caa3d02728a163421d75865a83a761ab63a058df04b99",
+   "hash_after": "67aaf3751cb08568d21139fec7583eecdadc8d264b15efe89982c226b325529d",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.4.mlp.down_proj.weight",
+   "hash_before": "f0ca8466bce8f1651c9a0f877a706d4564552a76124463a3931310e4756b9c50",
+   "hash_after": "38fe4ddbfaca4c5e838a40b306f5599ff97ac5211903015bd1d373e138233a33",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.4.mlp.gate_proj.weight",
+   "hash_before": "2966329de3827a73deb1583d69f511ccbdbdcedf2449d37c8ed40b16808e7ec5",
+   "hash_after": "5a2bab9a2033018d9dd4bd7a19dfe06ffcc262187f8838ce4f459eaadd466001",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.4.mlp.up_proj.weight",
+   "hash_before": "c75f308a16e8b2b668ff1be2c3bf697922a117852f7de282d128a220481b8113",
+   "hash_after": "4e5a5c56f8a2003a74eae6e9458050e3d2d59fd7fd87828b075fb883ef538e2e",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.4.self_attn.k_proj.weight",
+   "hash_before": "d8fc6e1ec2309aa80199d82add08194ac00ae847937531df86e3eb78d61dacfe",
+   "hash_after": "aa07428882a5a2b3bad600b6a6ac43abdcbf2eae6c46aa97956959ebac8e79c5",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.4.self_attn.o_proj.weight",
+   "hash_before": "dda178f68d81853677b223ce106128f28cbdd01676561b92872555f2d4cce817",
+   "hash_after": "f685c2ad28a579d443493f1e91ba1b20caf1fa7cb96a62a40e1c918529a11d13",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.4.self_attn.q_proj.weight",
+   "hash_before": "344f69766b16d64b052eacb40e2d3dec1fe20c41fe7e50663050bee9f61de27b",
+   "hash_after": "d8f40b68ed62cbed945d6f16855347b32b8da11ee42a21b4f3b4ad72ae595e2e",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.4.self_attn.v_proj.weight",
+   "hash_before": "038db6f815ea91c8f0628cdff0fcc11eee9bdccc34534e184188a30eb00e7c50",
+   "hash_after": "f4a384ba95c90dacf22a1382f037a298fc44fe229a1429a58b446b8b91b647d7",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.5.mlp.down_proj.weight",
+   "hash_before": "74f4aa28b9abcc3381e1c6b269d4b72dae589c62c4fe5578d88665e4f2f8541d",
+   "hash_after": "0c16024adfd03026f911b0e7bf419e6aedf7be2cbb363bbd2875363a00c1aa33",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.5.mlp.gate_proj.weight",
+   "hash_before": "ac7edc5b6ac858c34932a198ef43186e7b88b79f945f396ea8d6974b62c9250d",
+   "hash_after": "ea87ac96bbaf22b17d0626cd8d2692e8cf7b324172d3082be562f6d3e0dca4de",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.5.mlp.up_proj.weight",
+   "hash_before": "c420cef082ff64d8b25c7f8ed39e84e030f2ae60a8759a457581e0d4741a8366",
+   "hash_after": "0b2784f5d9846392b1f7c2b28514a03530cc638d499a5f5566d89e56893d353a",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.5.self_attn.k_proj.weight",
+   "hash_before": "092a32d9afc76d494ed19aedc0a4ec07a45c48410459204ba5f8328eaa93063e",
+   "hash_after": "991814967db00e9d0c2ac34a03579bc7ef0066e019ec65b10e3efaabf806adce",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.5.self_attn.o_proj.weight",
+   "hash_before": "85e767cb35c38badaa9fb73f46f6d4852345aeeacf67031f4e671d00b270a892",
+   "hash_after": "ceced1bef48b5cd40b7c847c72edf29c8197863c430c2754351dae93fc2776b7",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.5.self_attn.q_proj.weight",
+   "hash_before": "41e72333243511655b5c3b6fe46ae23db0821808e02eec269b41e1ab16f0028f",
+   "hash_after": "9e30b732788d33a253769a19e069dd683617606ef9d89deb89f449b103118e4f",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.5.self_attn.v_proj.weight",
+   "hash_before": "3ce3c1642ae25ec51a3ce8100db10a9f30ca64a55c893920562a995115ecac4e",
+   "hash_after": "0c484565882a9a27f5e3a6a7efa7379b550e466ef99e0072bdbebb71ee219c53",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.6.mlp.down_proj.weight",
+   "hash_before": "fe05a8f6f1024c222f0d27a6f81869b34e90a0b7fb5083812eb3eacf0b2bd6b8",
+   "hash_after": "7de03d389363c6973124850da8c30be1c547bcc506a2bbc247288f158208fc4f",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.6.mlp.gate_proj.weight",
+   "hash_before": "ac304aacb3ba6c422a30047b12be7c77fbdaabb18b660ff6a373334a6460cb02",
+   "hash_after": "bfd92329057ee0a919b318018f5ef44907947a117a2d6eadf33943913ba9b3b3",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.6.mlp.up_proj.weight",
+   "hash_before": "9be595fe9b2fbbb816c8d142091ce1bc569f738b83b142f5f84255d91cfc28d2",
+   "hash_after": "758b6fcb723ddade643a871e3e11c75cca28c1eac870fdc2d808c89cb7a9ec99",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.6.self_attn.k_proj.weight",
+   "hash_before": "418ee8e0baa274b9e92f580620fa6f78e96a4514ed5785c6cc3620c02aa48827",
+   "hash_after": "cf63d2e8e341f711a8c285ac3b819d3ef6b35fde2beecf1a4f721eb7c1ac4a39",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.6.self_attn.o_proj.weight",
+   "hash_before": "b7e56adcfa56c4d08a19df5d2ffabc8d7afdef259107d890fb4c56e617908a2d",
+   "hash_after": "21765912d215676cf9d9118ad06e53f939ae5351e5925c96b71b1315aee1926c",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.6.self_attn.q_proj.weight",
+   "hash_before": "cf74aab98018b2de4bc144e45bd6dbc2dcc949a58546ff5201bccef48f028ee1",
+   "hash_after": "0faece6af8cffbed4345f22fd25451bb49858b00648df4f81cdc5e9400ce6590",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.6.self_attn.v_proj.weight",
+   "hash_before": "7e9957e40d7e7e8c5f66304f3a017ab9cac810ecf9d87a2a4aa690f05604768b",
+   "hash_after": "46352280987017f407b39109784b2f0a3136d4df237ea63a37df3fc88116329d",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.7.mlp.down_proj.weight",
+   "hash_before": "6d270779d615dc56f152c6a3cd19bd61d1fcfde284f079fd43cf507f5a5594b4",
+   "hash_after": "61773747eab9f6d47de3350a9c0c3397f26b243d7b7748ed856430330a630695",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.7.mlp.gate_proj.weight",
+   "hash_before": "423414960b42b91e7f1a0a858ef956e5798d6dd9030f1ae65eb8cdcf6bff5742",
+   "hash_after": "8917e398b8574a43682ef6a42a50adb235f65889c9ad99727913ccfdf92c3238",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.7.mlp.up_proj.weight",
+   "hash_before": "19d6ae37da87c3c2e4f170c9bca5b405488fa3a28f823938ff3514b6d9abd025",
+   "hash_after": "b9571e057a4a769b0038a3336a9ddd4e10d966da55b62992fb18d997e547c553",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.7.self_attn.k_proj.weight",
+   "hash_before": "b8b17d37adf5db8e5da8142d174d43bae5a7f73e074fb27e9402626727624006",
+   "hash_after": "e63e517d9b54a0a0ce57e6f4dbcd347e3ecec4174ec635f3ef205c0558c04785",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.7.self_attn.o_proj.weight",
+   "hash_before": "83464645ed86c9f30a9772bc71e8fb53f5fa58a667dda8beb28f4e29611611a4",
+   "hash_after": "cb2366506693d81ca69b771d1d521dbbba5642e87e40e824ae06e12f05741157",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.7.self_attn.q_proj.weight",
+   "hash_before": "4c60f4898cbe2530cde3417cc17e17d7b87e360109c46d93b5622671ce33a0bb",
+   "hash_after": "aa43ebe363525e3ec9b94e2575291d5894d4bbd02dc97fd99479c539f8c37f0c",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.7.self_attn.v_proj.weight",
+   "hash_before": "2fe32a21c48bf749d8b5bfad3fcbd4798d9b12fda2642526d69e700ec10c0715",
+   "hash_after": "8a8e8495501fd1a7f268d76a3de72a4b2425f0533937555dfc8686401a7d33ca",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.8.mlp.down_proj.weight",
+   "hash_before": "60e1929dbdbdeb540d924218cfe21e7d8141cd6f65043c07b5bfde66e4b60e4c",
+   "hash_after": "dff39313dbfddfc15d2f5750d37ac4d671a12a7e5434047fe68ccb22c51f032c",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.8.mlp.gate_proj.weight",
+   "hash_before": "7f9e13c80c3d030fa945b50301ff56c7cd927965c3821c897954bf90ad99e628",
+   "hash_after": "cb3937061aa5fd563bb9810388dbf44f45003c1ab1172ac572e9ee5b76430aac",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.8.mlp.up_proj.weight",
+   "hash_before": "c8d5f1a7a5d404a7867c07fe2ce9d6f916e2ac04358ab4ee6e61ccc5d0166e3c",
+   "hash_after": "05a1b166f00014aeddafd6796e736306d7b2c8cd6adb663dc3e2e7e3435f14e0",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.8.self_attn.k_proj.weight",
+   "hash_before": "f191ca1e1c6919785ee8f185dbaab9f68fb0b2cf01f9bccadd9ef9f59561ed5e",
+   "hash_after": "ae0769e06a4bc3bd53e5375c25fe65b12484abac301ecbd38ccb4aee7af59fa9",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.8.self_attn.o_proj.weight",
+   "hash_before": "e4268a67a5f4a1933ef57a7be3cace7a2412c97872e7d829c6cf3cf17685b272",
+   "hash_after": "6106b72728f3b9409b0719ea6133381501bd9b8ced1ef98f4cb94a1233fa0763",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.8.self_attn.q_proj.weight",
+   "hash_before": "2cede2d5a8c8207747b78349b45e4852a638c73ba13fcedb5285cb6113a52ad0",
+   "hash_after": "2dc6794efb44fbbf11dc7d012aebb0389f871c1e3f8b98936e6859811528338c",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.8.self_attn.v_proj.weight",
+   "hash_before": "af7573f7ce6893a5d4ad39ae94714754d3cd5b48ab47d2ace12e2570e3760ee6",
+   "hash_after": "39b9be1af8d7c9197a2dcab8f6bba1201442f5228ad86696deadc08ee3697050",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.9.mlp.down_proj.weight",
+   "hash_before": "e419009f2ab127a207e1e8ff76af61f3290fd7892bf8949bd2618d74327a8fbb",
+   "hash_after": "167bb7c5e0a495e259ce39321436ed6e186220fbf860c8a23acd229bb6af3725",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.9.mlp.gate_proj.weight",
+   "hash_before": "333a124de57057a53ec483d04a46134e83540ca27694c7152e88b9e6afc92759",
+   "hash_after": "15ff07d3d0d803cb1c4569e3ac5ad7795222d994815ca77a0efd4de749d71280",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.9.mlp.up_proj.weight",
+   "hash_before": "8f976c9286c50ca107d7e7691353a22bed49592312235f4ce5f62e0a022378dc",
+   "hash_after": "347587328dbba551e9870c96ad5e7ab94e990eae9a25a67480275683de2c9c52",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.9.self_attn.k_proj.weight",
+   "hash_before": "e73a411d54357ee62ce838c515a4916c6bc659745de4b580478e12afee4b9292",
+   "hash_after": "1cd82dc003a02e59fe2a031ee5460d067189504989d9a457741f64f44834beb7",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.9.self_attn.o_proj.weight",
+   "hash_before": "a8821073b77aeacad564f5a08e7e29e62f9eff545ec663f82816aaed3eb8a28a",
+   "hash_after": "dfb423d162f1c9b000faec874a6323db72d2981a8054d7b3be920dd17983edef",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.9.self_attn.q_proj.weight",
+   "hash_before": "9c682c28fcae23dee708e092a0dae9b92943fe087fb61f045bf523a8b3dfeb50",
+   "hash_after": "9d7002c98e3d1b38067448b1e157f7ee492640b10c7f86f4227b05b68db56d1b",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  },
+  {
+   "name": "model.layers.9.self_attn.v_proj.weight",
+   "hash_before": "8f661c7e74967ab9c4b14a8bcd051c7b8dc0ac1687cbb2cd247b9f873769cfaf",
+   "hash_after": "c282fa609e7bc6217fa59c66cb30c07516d7506e5804f12612ede3f130503e64",
+   "how": {
+    "op": "taskvec",
+    "lam": 0.3
+   }
+  }
+ ]
+}
