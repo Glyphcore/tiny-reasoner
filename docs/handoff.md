@@ -55,7 +55,8 @@ Floor effect: non-thinking base never solves; edits are judged on legal rate and
 
 Inspection (held-in seeds 100-139, non-thinking, residual at the LAST PROMPT token): diff-of-means directions separate
 optimal vs wrong moves only weakly (held AUC <= 0.64 puzzle8, 0.69 countdown legal at L23). The move is decided one token later
-(replies are "move 5"), hence the `--at move` recollection (`.cache/inspect-move/`): still weak (puzzle8 optimal AUC <= 0.65 at L9,
+(replies are "move 5"), hence the `--at move` recollection (`.cache/inspect-move/`): model rates at 96 tokens: hanoi parsed 0.92 legal 0.46 optimal 0.33 (n=39), puzzle8 legal 0.31 optimal 0.14 (n=307),
+countdown legal 0.57 optimal 0.17 (n=315). Directions still weak (puzzle8 optimal AUC <= 0.65 at L9, countdown <= 0.67 at L20,
 legal <= 0.65 at L18-26; hanoi has ~40 distinct states, too few). The model does not represent its own move quality; direction edits
 from own-move labels are a long shot. Priority order for edits: task vectors (tv-p0.3, tv-m0.3), thinking-direction steer
 (`tools/inspect_think.py` -> dirs-think.pt, baked into o_proj so non-thinking mode reasons), orth of the wrong-move direction at L18-24,
