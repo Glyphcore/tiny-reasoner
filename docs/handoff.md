@@ -55,7 +55,11 @@ Floor effect: non-thinking base never solves; edits are judged on legal rate and
 
 Inspection (held-in seeds 100-139, non-thinking, residual at the LAST PROMPT token): diff-of-means directions separate
 optimal vs wrong moves only weakly (held AUC <= 0.64 puzzle8, 0.69 countdown legal at L23). The move is decided one token later
-(replies are "move 5"), hence the `--at move` recollection (`.cache/inspect-move/`).
+(replies are "move 5"), hence the `--at move` recollection (`.cache/inspect-move/`): still weak (puzzle8 optimal AUC <= 0.65 at L9,
+legal <= 0.65 at L18-26; hanoi has ~40 distinct states, too few). The model does not represent its own move quality; direction edits
+from own-move labels are a long shot. Priority order for edits: task vectors (tv-p0.3, tv-m0.3), thinking-direction steer
+(`tools/inspect_think.py` -> dirs-think.pt, baked into o_proj so non-thinking mode reasons), orth of the wrong-move direction at L18-24,
+head scaling from `tools/inspect_heads.py`.
 
 ## Pitfalls
 - `/work` is an overlay where uv cannot set file perms: venv lives at `~/tr-venv`, `.venv` is a symlink (gitignored). `sed -i` warns, still works.
