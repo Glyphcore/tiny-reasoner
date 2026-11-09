@@ -7,8 +7,10 @@
 - Edits: `tr/edits/weightedit.py` TensorEdit (before/after copies), `tr/edits/recipes.py` RecipeEdit (taskvec/steer/orth/headscale/neuron/lora,
   streamed exact revert from the HF checkpoint), `tr/edits/lora.py`, `tr/edits/ops.py`; `tr/inspect.py`; `tools/{inspect_collect,inspect_analyse,make_edit,baselines.sh}`.
 - Qwen3-0.6B-Base (rev da87bfb608c14b7cf20ba1ce41287e8de496c0cd) downloaded for task vectors.
-- In flight (background, started 2026-11-08 ~21:40): `bash tools/baselines.sh base` -> `.q/baselines-base.out` (6 runs, hours);
-  `tools/inspect_collect.py` -> `.q/inspect-collect.out`, `.cache/inspect/<game>.pt`.
+- Edits built and verified (apply/revert hashes ok): `edits/tv-p0.3`, `edits/tv-m0.3` (task vectors vs Qwen3-0.6B-Base, 196 tensors).
+- Directions: `.cache/inspect-move/dirs-{optimal,legal,think}.pt`; heads ranking in `.q/inspect-heads.out`.
+- In flight 2026-11-09 evening (detached): base think-chat, text-chats, nothink-cot, nothink-legal, then think-solo (`.q/baselines-base-*.out`);
+  `tv-p0.3` then `tv-m0.3` on nothink-solo, nothink-chat, text-chats (`.q/baselines-tv-*.out`).
 
 ## Goal (user)
 Alter the weights, do not train. Then see the result in coherent interaction, not only toy checks.
@@ -49,6 +51,13 @@ bad = illegal+unparseable moves per episode (episode ends after 3 in a row). Bas
 | base | nothink-solo | countdown | 40 | 0.03 | 0.22 | 1.00 | 2.92 | 0 | 42 |
 | base | nothink-solo | hanoi | 40 | 0.00 | 0.20 | - | 3.00 | 0 | 41 |
 | base | nothink-solo | puzzle8 | 40 | 0.00 | 0.80 | - | 2.33 | 0 | 29 |
+
+| base | nothink-chat | hanoi L2 | 5 | 1.00 | 1.00 | | | 0 | |
+| base | nothink-chat | hanoi L3 | 5 | 0.00 | 0.42 | | | 0 | |
+| base | nothink-chat | puzzle8 L1/L2 | 5 | 0.00 | 0.50/0.86 | | | 0 | |
+
+Chat mode (verifier pushback on illegal moves) lifts hanoi L2 from 0 to 1.00 solve. Thinking mode needs the budget forcing
+(policy closes </think> at max_new_tokens and answers in 48 tokens); without it every step truncated (run set aside in `.q/base-think-solo-nobudget`).
 
 Per level (nothink-solo): hanoi legal 0.25/0.25/0.00/0.25 (L2-5); puzzle8 legal 0.90/0.62/0.77/0.78 (L1-4); countdown solve 0/0.10/0/0, legal 0.14/0.23/0.30 (L1-3).
 Floor effect: non-thinking base never solves; edits are judged on legal rate and on thinking-mode solve at the easy levels.
