@@ -41,8 +41,21 @@ Alter the weights, do not train. Then see the result in coherent interaction, no
 6. Compare, keep the best, side-by-side chats (`tools/chat.py --script data/chats.json --run <id>` base vs `--edit`).
 
 ## Results
-| edit | model | what changed | game | solve | legal | steps | ppl | chats ok |
-|---|---|---|---|---|---|---|---|---|
+Held-out seeds 0-9; `tools/results.py` prints these tables from `runs/`. solve = solved fraction, legal = legal moves / all moves,
+bad = illegal+unparseable moves per episode (episode ends after 3 in a row). Base = Qwen3-0.6B fp16, greedy.
+
+| variant | condition | game | n | solve | legal | steps/opt | bad | reason_tok | s/ep |
+|---|---|---|---|---|---|---|---|---|---|
+| base | nothink-solo | countdown | 40 | 0.03 | 0.22 | 1.00 | 2.92 | 0 | 42 |
+| base | nothink-solo | hanoi | 40 | 0.00 | 0.20 | - | 3.00 | 0 | 41 |
+| base | nothink-solo | puzzle8 | 40 | 0.00 | 0.80 | - | 2.33 | 0 | 29 |
+
+Per level (nothink-solo): hanoi legal 0.25/0.25/0.00/0.25 (L2-5); puzzle8 legal 0.90/0.62/0.77/0.78 (L1-4); countdown solve 0/0.10/0/0, legal 0.14/0.23/0.30 (L1-3).
+Floor effect: non-thinking base never solves; edits are judged on legal rate and on thinking-mode solve at the easy levels.
+
+Inspection (held-in seeds 100-139, non-thinking, residual at the LAST PROMPT token): diff-of-means directions separate
+optimal vs wrong moves only weakly (held AUC <= 0.64 puzzle8, 0.69 countdown legal at L23). The move is decided one token later
+(replies are "move 5"), hence the `--at move` recollection (`.cache/inspect-move/`).
 
 ## Pitfalls
 - `/work` is an overlay where uv cannot set file perms: venv lives at `~/tr-venv`, `.venv` is a symlink (gitignored). `sed -i` warns, still works.
@@ -51,6 +64,8 @@ Alter the weights, do not train. Then see the result in coherent interaction, no
 - Fake policies (`tests/fake_policy.py`) find the state by matching the latest `game.render` in the messages (cache of new(level, seed<20) plus states reached); mid-game states must be reached by the policy's own moves. Pass `fallback=` when the same policy also answers non-game chats.
 - Solo mode sends a fresh `[system, user]` pair per move (board re-rendered); only chat mode keeps history (capped at 24 messages, oldest user/assistant pair dropped).
 - pytest cache warning on the overlay is harmless.
+- Background jobs started from the agent shell die when the turn ends: launch long GPU jobs with `setsid nohup ... & disown`.
+- `pkill -f <pattern>` matches the agent's own shell command line; use `pkill -f "python tools/eval.py"` style patterns.
 - `make setup`: torch must come from the cu124 index first (`TORCH_INDEX`); installing requirements first pulls the default CUDA-13 torch. `UV_HTTP_TIMEOUT=600` is set (the 30 s default timed out on nvidia wheels). Torch 2.6.0+cu124 sees the GTX 1660 Ti with `LD_LIBRARY_PATH=/usr/lib/wsl/lib` (already set in the container env).
 - transformers 5.x installed; `generate` kwargs `temperature/top_p/top_k=None` are passed for greedy to avoid warnings.
 - Generation is slow when other agents load the CPU: ~3.5 tok/s thinking, ~5 tok/s plain (kernel launch bound, load avg ~9 on 12 threads; GPU matmul itself is fast). Budget evals accordingly; consider a static cache or batching if needed.
