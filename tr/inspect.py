@@ -33,11 +33,14 @@ def capture(policy, probes):
         hooks.append(layer.self_attn.o_proj.register_forward_pre_hook(
             lambda m, inp, i=i: grab["head"].__setitem__(i, inp[0][0, -1].float().cpu())))
     toks = answer_tokens(policy)
-    out = {k: [] for k in ("resid", "mlp", "head", "logits", "truth", "game", "top")}
+    out = {k: [] for k in ("resid", "resid_move", "mlp", "head", "logits", "truth", "game", "top")}
     try:
         for p in probes:
-            ids = policy.tok(policy.render(p.messages), return_tensors="pt").input_ids.to(policy.device)
+            text = policy.render(p.messages)
+            ids = policy.tok(text, return_tensors="pt").input_ids.to(policy.device)
+            mpos = len(policy.tok(text[:text.index("\nIs this move")]).input_ids) - 1  # last token of the proposed move
             r = policy.model(input_ids=ids, output_hidden_states=True)
+            out["resid_move"].append(torch.stack([h[0, mpos].float().cpu() for h in r.hidden_states]).numpy().astype(np.float16))
             lg = r.logits[0, -1].float().cpu()
             out["resid"].append(torch.stack([h[0, -1].float().cpu() for h in r.hidden_states]).numpy().astype(np.float16))
             out["mlp"].append(torch.stack(grab["mlp"]).numpy().astype(np.float16))

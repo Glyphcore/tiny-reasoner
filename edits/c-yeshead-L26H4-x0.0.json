@@ -1,0 +1,14 @@
+{
+ "id": "c-yeshead-L26H4-x0.0",
+ "family": "scale",
+ "description": "scale head L26H4 (largest truth-independent push toward `legal`) by 0.0",
+ "ops": [
+  {
+   "op": "scale_cols",
+   "tensor": "model.layers.26.self_attn.o_proj.weight",
+   "start": 512,
+   "end": 640,
+   "scale": 0.0
+  }
+ ]
+}

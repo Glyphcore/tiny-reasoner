@@ -1,0 +1,20 @@
+{
+ "id": "d-route-L23-s0.05",
+ "family": "lowrank",
+ "description": "rank-one LoRA on layer 23 mlp.down_proj: A = ridge truth probe on MLP hidden (dev acc 0.74), B = unembed(legal) - unembed(illegal); probe output +-1 writes 0.05 x residual norm; threshold as bias",
+ "ops": [
+  {
+   "op": "lowrank_add",
+   "tensor": "model.layers.23.mlp.down_proj.weight",
+   "A": "edits/vec/route_L23_A.npy",
+   "B": "edits/vec/route_L23_B.npy",
+   "scale": 0.05
+  },
+  {
+   "op": "bias_add",
+   "module": "model.layers.23.mlp.down_proj",
+   "vec": "edits/vec/route_L23_bias.npy",
+   "scale": 0.05
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+{
+ "id": "a1-debias-L27-s0.02",
+ "family": "steer_bias",
+ "description": "constant shift along unembed(illegal) - unembed(legal) baked as a bias on the last mlp.down_proj, 0.02 x residual norm",
+ "ops": [
+  {
+   "op": "bias_add",
+   "module": "model.layers.27.mlp.down_proj",
+   "vec": "edits/vec/debias_L27.npy",
+   "scale": 0.02
+  }
+ ]
+}

@@ -1,0 +1,35 @@
+{
+ "id": "c-boost-helpful4-x1.5",
+ "family": "scale",
+ "description": "scale the 4 heads with the most positive truth-signed attribution by 1.5",
+ "ops": [
+  {
+   "op": "scale_cols",
+   "tensor": "model.layers.24.self_attn.o_proj.weight",
+   "start": 768,
+   "end": 896,
+   "scale": 1.5
+  },
+  {
+   "op": "scale_cols",
+   "tensor": "model.layers.26.self_attn.o_proj.weight",
+   "start": 512,
+   "end": 640,
+   "scale": 1.5
+  },
+  {
+   "op": "scale_cols",
+   "tensor": "model.layers.23.self_attn.o_proj.weight",
+   "start": 768,
+   "end": 896,
+   "scale": 1.5
+  },
+  {
+   "op": "scale_cols",
+   "tensor": "model.layers.25.self_attn.o_proj.weight",
+   "start": 768,
+   "end": 896,
+   "scale": 1.5
+  }
+ ]
+}

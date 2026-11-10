@@ -1,0 +1,16 @@
+{
+ "id": "b-ortho-selfreport-L12",
+ "family": "ortho",
+ "description": "self-report accurate-minus-inaccurate direction (layer 12) orthogonalised out of every o_proj and down_proj (abliteration recipe)",
+ "ops": [
+  {
+   "op": "ortho",
+   "tensors": [
+    "model\\.layers\\.\\d+\\.self_attn\\.o_proj\\.weight",
+    "model\\.layers\\.\\d+\\.mlp\\.down_proj\\.weight"
+   ],
+   "vec": "edits/vec/a2-selfreport_L12.npy",
+   "strength": 1.0
+  }
+ ]
+}

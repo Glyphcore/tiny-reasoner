@@ -1,0 +1,13 @@
+{
+ "id": "a3-weighted-L12-s0.3",
+ "family": "steer_bias",
+ "description": "verifier-agreement-weighted contrast baked as a bias on layer 12 mlp.down_proj, 0.3 x residual norm",
+ "ops": [
+  {
+   "op": "bias_add",
+   "module": "model.layers.12.mlp.down_proj",
+   "vec": "edits/vec/a3-weighted_L12.npy",
+   "scale": 0.3
+  }
+ ]
+}

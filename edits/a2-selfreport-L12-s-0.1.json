@@ -1,0 +1,13 @@
+{
+ "id": "a2-selfreport-L12-s-0.1",
+ "family": "steer_bias",
+ "description": "self-report accurate-minus-inaccurate direction baked as a bias on layer 12 mlp.down_proj, -0.1 x residual norm",
+ "ops": [
+  {
+   "op": "bias_add",
+   "module": "model.layers.12.mlp.down_proj",
+   "vec": "edits/vec/a2-selfreport_L12.npy",
+   "scale": -0.1
+  }
+ ]
+}

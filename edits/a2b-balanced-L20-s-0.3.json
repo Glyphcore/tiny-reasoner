@@ -1,0 +1,13 @@
+{
+ "id": "a2b-balanced-L20-s-0.3",
+ "family": "steer_bias",
+ "description": "class-balanced self-report direction (accurate minus inaccurate within each truth class) baked as a bias on layer 20 mlp.down_proj, -0.3 x residual norm",
+ "ops": [
+  {
+   "op": "bias_add",
+   "module": "model.layers.20.mlp.down_proj",
+   "vec": "edits/vec/a2b-balanced_L20.npy",
+   "scale": -0.3
+  }
+ ]
+}

@@ -1,0 +1,35 @@
+{
+ "id": "c-ablate-harmful4",
+ "family": "scale",
+ "description": "zero the 4 heads with the most negative truth-signed attribution",
+ "ops": [
+  {
+   "op": "scale_cols",
+   "tensor": "model.layers.22.self_attn.o_proj.weight",
+   "start": 896,
+   "end": 1024,
+   "scale": 0.0
+  },
+  {
+   "op": "scale_cols",
+   "tensor": "model.layers.26.self_attn.o_proj.weight",
+   "start": 896,
+   "end": 1024,
+   "scale": 0.0
+  },
+  {
+   "op": "scale_cols",
+   "tensor": "model.layers.23.self_attn.o_proj.weight",
+   "start": 896,
+   "end": 1024,
+   "scale": 0.0
+  },
+  {
+   "op": "scale_cols",
+   "tensor": "model.layers.26.self_attn.o_proj.weight",
+   "start": 1152,
+   "end": 1280,
+   "scale": 0.0
+  }
+ ]
+}

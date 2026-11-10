@@ -6,6 +6,7 @@ Two probe sets, both scored by the exact game verifier:
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import random
 import re
@@ -23,15 +24,23 @@ JUDGE_VALID = r"^\s*(illegal|legal)[.!]?\s*$"
 SEED = {"dev": 5000, "heldout": 6000, "smoke": 7000, "fit": 8000}
 
 
-def _states(game, split, salt):
+BUCKETS = {"fit": range(0, 5), "dev": range(5, 7), "heldout": range(7, 10), "smoke": range(7, 10)}
+
+
+def bucket(game, state, move=""):
+    """Stable split assignment, so fit / dev / heldout never share an example even in tiny state spaces (Hanoi)."""
+    return int(hashlib.sha1(f"{game.name}|{state}|{move}".encode()).hexdigest(), 16) % 10
+
+
+def _states(game, split, salt, dedupe=True, tries=4000):
     rng = random.Random(f"{salt}-{game.name}-{SEED[split]}")
     seen = set()
-    for _ in range(20000):
+    for _ in range(tries):
         try:
             s = game.reset(SEED[split] + rng.randrange(10**6), rng.randint(1, 5))
         except RuntimeError:
             continue
-        if s not in seen:
+        if not dedupe or s not in seen:
             seen.add(s)
             yield s, rng
 
@@ -41,13 +50,15 @@ def judge_probes(split, n_per_game, prompt="plain"):
     v, out = ExactVerifier(), []
     for game in GAMES.values():
         want = {True: n_per_game // 2, False: n_per_game - n_per_game // 2}
-        for s, rng in _states(game, split, "judge"):
+        seen = set()
+        for s, rng in _states(game, split, "judge", dedupe=False):
             if not any(want.values()):
                 break
             m = rng.choice(game.all_moves(s))
             truth = v.legal(game, s, m)
-            if not want[truth]:
+            if (s, m) in seen or bucket(game, s, m.text) not in BUCKETS[split] or not want[truth]:
                 continue
+            seen.add((s, m))
             want[truth] -= 1
             sys = "You are checking moves in a puzzle game. " + game.rules() + "\n" + \
                   (game.hint() + "\n" if prompt == "hint" else "") + JUDGE_TASK
@@ -65,6 +76,8 @@ def call_probes(split, n_per_game, prompt="plain"):
         for s, _ in _states(game, split, "call"):
             if sum(p.meta["game"] == game.name for p in out) >= n_per_game:
                 break
+            if bucket(game, s) not in BUCKETS[split]:
+                continue
             sys = "You are playing a puzzle game with the user. " + game.rules() + "\n" + \
                   (game.hint() + "\n" if prompt == "hint" else "") + CALL_TASK
             msgs = [{"role": "system", "content": sys}, {"role": "user", "content": f"State: {game.render(s)}\nYour move?"}]
