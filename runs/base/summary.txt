@@ -1,0 +1,1 @@
+base split=heldout judge_acc=0.483 hit=0.483 valid=1.000 LL=53 LI=52 IL=10 II=5 call_hit=0.654 call_valid=1.000 solve=0.167 legal=0.539 opt=0.235 recover=0.189 steps=4.00 trace=21.4 probe_legal=0.796 probe_opt=0.444 ppl=30.88 chats=3/5 revert_exact=True secs=523.1
