@@ -1,9 +1,9 @@
 .q/
 .venv/
 .cache/
-runs/*/
-!runs/.keep
 __pycache__/
+.pytest_cache/
 *.safetensors
 *.bin
 *.pt
+runs/*/acts/

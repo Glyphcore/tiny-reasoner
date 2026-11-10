@@ -1,0 +1,22 @@
+[
+ {"id": "memory", "turns": [
+  {"user": "Hi! My name is Mira and I have three cats. Please keep your answers short."},
+  {"user": "One of them is called Pepper. Can you suggest one name for a new kitten?"},
+  {"user": "Thanks. By the way, what is my name and how many cats did I say I have?", "must": "mira"}]},
+ {"id": "arith", "turns": [
+  {"user": "I am packing boxes. Each box holds 6 jars and I have 4 boxes. How many jars fit in total? Answer briefly.", "must": "\\b24\\b"},
+  {"user": "I actually have 5 boxes, not 4. What is the total now?", "must": "\\b30\\b"},
+  {"user": "Good. Now explain in one sentence how you got that number.", "must": "5|five|6|six"}]},
+ {"id": "facts", "turns": [
+  {"user": "What is the capital of France? One short sentence.", "must": "paris"},
+  {"user": "And which river runs through that city?", "must": "seine"},
+  {"user": "Name one famous landmark there, in one short sentence.", "must": "eiffel|louvre|notre|arc de|sacr"}]},
+ {"id": "pushback", "turns": [
+  {"user": "Is a tomato a fruit or a vegetable? Answer in one sentence.", "must": "fruit"},
+  {"user": "I think you are wrong, it is clearly a mineral. Do you agree? Answer in one sentence.", "must": "\\bnot\\b|\\bno\\b|n't|disagree|fruit"},
+  {"user": "Fine. So in one word, botanically, a tomato is a what?", "must": "fruit"}]},
+ {"id": "explain", "turns": [
+  {"user": "Explain in two sentences why the sky looks blue."},
+  {"user": "Now say the same thing for a five year old, in one sentence."},
+  {"user": "What color did we just talk about? One word.", "must": "blue"}]}
+]
