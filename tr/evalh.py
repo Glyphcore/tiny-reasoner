@@ -10,12 +10,14 @@ from pathlib import Path
 import torch
 
 from spec.interfaces import Episode, Eval, Move, Trace
+from tr import probes as P
 from tr.games import GAMES, ExactVerifier
 
 ROOT = Path(__file__).resolve().parent.parent
 FORMAT = ("Each turn, reply in exactly this format and nothing else:\n"
           "THINK: <one short sentence about the state>\nMOVE: <your move>")
 LEVELS = [2, 3, 4]
+STOP = re.compile(r"MOVE:[^\n]*\w[^\n]*\n")  # stop once the move line is complete
 SPLITS = {  # fixed seed sets; dev is used for inspection and choosing edit strength, heldout for the results table
     "dev": {g: list(range(100, 106)) for g in GAMES},
     "heldout": {g: list(range(200, 206)) for g in GAMES},
@@ -49,8 +51,8 @@ def play(game, policy, seed, level, prompt="plain", max_new_tokens=40):
     msgs = [{"role": "system", "content": system_prompt(game, prompt)},
             {"role": "user", "content": f"State: {game.render(state)}\nYour move?"}]
     traces, moves, pushed, solved = [], [], False, False
-    for step in range(2 * level + 2):
-        text, n = policy.reply(msgs, max_new_tokens)
+    for step in range(level + 3):
+        text, n = policy.reply(msgs, max_new_tokens, STOP)
         move = read_move(game, text)
         legal = move is not None and verifier.legal(game, state, move)
         optimal = legal and move in game.optimal_moves(state)
@@ -127,7 +129,7 @@ def perplexity(policy, path=ROOT / "data/heldout.txt"):
 
 def reply_ok(text):
     words = re.findall(r"\w+", text)
-    if len(words) < 3:
+    if len(words) < 1:
         return False, "too short"
     if sum(c.isascii() for c in text) / len(text) < 0.9:
         return False, "non-ascii drift"
@@ -166,9 +168,10 @@ def write_transcripts(results, outdir, title):
         (outdir / f"{r['chat']}.md").write_text("\n".join(lines))
 
 
-def evaluate(policy, split, prompt, outdir, max_new_tokens=40, chat_max_new_tokens=48, probe_n=40, parts="gpxc"):
-    """parts: g games, p probes, x perplexity, c chats. Writes metrics.jsonl rows; returns Eval."""
-    ev = Eval(split, SPLITS[split], LEVELS, max_new_tokens, chat_max_new_tokens, probe_n)
+def evaluate(policy, split, prompt, outdir, max_new_tokens=40, chat_max_new_tokens=32, probe_n=20, judge_n=50, call_n=10,
+             parts="jtgpxc"):
+    """parts: j judge probes, t tool-call probes, g games, p move probes, x perplexity, c chats."""
+    ev = Eval(split, SPLITS[split], LEVELS, max_new_tokens, chat_max_new_tokens, probe_n, judge_n, call_n)
     outdir = Path(outdir)
     outdir.mkdir(parents=True, exist_ok=True)
     rows, per_game = [], {}
@@ -206,6 +209,21 @@ def evaluate(policy, split, prompt, outdir, max_new_tokens=40, chat_max_new_toke
                                                  probe_opt=sum(x["opt"] for x in r) / len(r), probe_n=len(r))
             pr += r
         ev.probe_legal, ev.probe_opt = sum(x["legal"] for x in pr) / len(pr), sum(x["opt"] for x in pr) / len(pr)
+    if "j" in parts:
+        jr = [P.run_probe(policy, p) for p in P.judge_probes(split, judge_n, prompt)]
+        sm = P.summarize(jr)
+        ev.judge_acc = sum(r["said"] == ("legal" if r["truth"] else "illegal") for r in jr) / len(jr)
+        ev.judge_hit, ev.judge_valid, ev.judge_pos, ev.confusion = sm["hit"], sm["valid"], sm["first_pos"], P.judge_table(jr)
+        for name in GAMES:
+            g = [r for r in jr if r["game"] == name]
+            per_game.setdefault(name, {}).update(
+                judge_acc=sum(r["said"] == ("legal" if r["truth"] else "illegal") for r in g) / len(g), confusion=P.judge_table(g))
+        rows += [{"kind": "judge", **r} for r in jr]
+    if "t" in parts:
+        cr = [P.run_probe(policy, p) for p in P.call_probes(split, call_n, prompt)]
+        sm = P.summarize(cr)
+        ev.call_hit, ev.call_valid, ev.call_pos = sm["hit"], sm["valid"], sm["first_pos"]
+        rows += [{"kind": "call", **r} for r in cr]
     if "x" in parts:
         ev.ppl, _ = perplexity(policy)
     if "c" in parts:

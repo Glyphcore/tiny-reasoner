@@ -60,8 +60,19 @@ class Policy(Protocol):
     model_id: str
     revision: str
 
-    def reply(self, messages: list[dict[str, str]], max_new_tokens: int) -> tuple[str, int]: ...
+    def reply(self, messages: list[dict[str, str]], max_new_tokens: int, stop: Any = None) -> tuple[str, int]: ...
     def nll(self, text: str) -> tuple[float, int]: ...
+
+
+@dataclass
+class Probe:
+    """Budgeted string probe: the expected string must appear within `budget` generated tokens."""
+    id: str
+    messages: list[dict[str, str]]
+    expect: str  # regex for the correct answer (truth comes from the exact verifier)
+    valid: str  # regex for a format-valid reply
+    budget: int  # generated-token budget, sized so a competent answer certainly fits
+    meta: dict[str, Any]  # game, truth, move
 
 
 @dataclass
@@ -72,6 +83,16 @@ class Eval:
     max_new_tokens: int
     chat_max_new_tokens: int
     probe_states: int  # teacher-forced move probes per game
+    judge_n: int = 0  # legality-judgement probes per game (balanced)
+    call_n: int = 0  # tool-call probes per game
+    judge_acc: float = 0.0  # self-report vs verifier
+    judge_hit: float = 0.0  # expected word inside the budget
+    judge_valid: float = 0.0
+    judge_pos: float = 0.0  # mean char position of first hit
+    confusion: dict[str, int] = field(default_factory=dict)  # says_X_is_Y cells
+    call_hit: float = 0.0
+    call_valid: float = 0.0
+    call_pos: float = 0.0
     solve: float = 0.0
     legal: float = 0.0
     optimal: float = 0.0

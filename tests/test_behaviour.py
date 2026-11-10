@@ -17,7 +17,7 @@ class Oracle:
     def __init__(self, game, seed, level, stumble=False):
         self.game, self.state, self.stumble = game, game.reset(seed, level), stumble
 
-    def reply(self, messages, max_new_tokens):
+    def reply(self, messages, max_new_tokens, stop=None):
         if self.stumble:
             self.stumble = False
             return "THINK: hmm.\nMOVE: banana", 5
@@ -102,3 +102,22 @@ def test_eval_is_stable_on_fixed_seeds():
         return [(t.text, t.legal) for t in ep.traces], ep.solved, ep.verified, pr, perplexity(policy)
     a, b = once(), once()
     assert a == b and a[2]
+
+
+def test_judge_probes_are_balanced_and_verifier_true():
+    from tr import probes as P
+    ps = P.judge_probes("smoke", 6)
+    assert len(ps) == 18 and sum(p.meta["truth"] for p in ps) == 9
+    assert ps[0].messages == P.judge_probes("smoke", 6)[0].messages
+
+    class Echo:  # replies with the verifier's truth: every probe must hit inside the budget, table must be diagonal
+        def __init__(self): self.i = -1
+        def reset_cache(self): self.i += 1
+        def reply(self, messages, budget, stop=None): return ("legal" if ps[self.i].meta["truth"] else "illegal"), 1
+    e = Echo()
+    rows = [P.run_probe(e, p) for p in ps]
+    t = P.judge_table(rows)
+    assert all(r["hit"] and r["valid"] and r["pos"] == 0 for r in rows)
+    assert t["says_legal_is_legal"] == 9 and t["says_illegal_is_illegal"] == 9 and sum(t.values()) == 18
+    assert not P.run_probe(type("W", (), {"reset_cache": lambda s: None, "reply": lambda s, m, b, stop=None: ("legal", 1)})(),
+                           [p for p in ps if not p.meta["truth"]][0])["hit"]

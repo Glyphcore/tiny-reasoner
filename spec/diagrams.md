@@ -49,8 +49,16 @@ class Policy {
   <<Protocol>>
   +model_id
   +revision
-  +reply(messages, max_new_tokens)
+  +reply(messages, max_new_tokens, stop)
   +nll(text)
+}
+class Probe {
+  +id
+  +messages
+  +expect
+  +valid
+  +budget
+  +meta
 }
 class Eval {
   +split
@@ -59,6 +67,16 @@ class Eval {
   +max_new_tokens
   +chat_max_new_tokens
   +probe_states
+  +judge_n
+  +call_n
+  +judge_acc
+  +judge_hit
+  +judge_valid
+  +judge_pos
+  +confusion
+  +call_hit
+  +call_valid
+  +call_pos
   +solve
   +legal
   +optimal
@@ -105,6 +123,8 @@ Verifier ..> Game
 Verifier ..> Episode
 Episode *-- Trace
 Run *-- Eval
+Eval ..> Probe : budgeted probes
+Probe ..> Verifier : truth
 Run o-- WeightEdit
 Adapter ..> WeightEdit : merge
 ```
@@ -116,7 +136,7 @@ No gradient step anywhere: "train" in the project loop is replaced by "compute e
 ```mermaid
 flowchart LR
   G[generate: Policy plays Game as a conversation] --> V[verify: exact Verifier, replay]
-  V --> S[score: solve, legal, steps, trace len, probes, ppl, chats]
+  V --> S[score: budgeted probes with 2x2 self-report table, solve, legal, steps, trace len, ppl, chats]
   S --> I[inspect: activations, logit lens, head attribution]
   I --> E[compute WeightEdit / Adapter from analysis]
   E --> A[apply: hashes before/after] --> G

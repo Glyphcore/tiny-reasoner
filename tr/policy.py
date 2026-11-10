@@ -56,7 +56,7 @@ class HFPolicy:
         self._ids, self._cache = [], None
 
     @torch.no_grad()
-    def _generate(self, ids, max_new_tokens):
+    def _generate(self, ids, max_new_tokens, stop=None):
         n = 0
         while n < min(len(ids), len(self._ids)) and ids[n] == self._ids[n]:
             n += 1
@@ -77,14 +77,16 @@ class HFPolicy:
             out.append(nxt)
             fed.append(nxt)
             feed = torch.tensor([[nxt]], device=self.device)
-        self._ids = fed[:-1] if out and len(out) == max_new_tokens else fed
+            if stop and stop.search(self.tok.decode(out[-12:])):
+                break
+        self._ids = fed
         if len(self._ids) != self._cache.get_seq_length():
             self._ids = self._ids[: self._cache.get_seq_length()]
         return out
 
-    def reply(self, messages, max_new_tokens):
+    def reply(self, messages, max_new_tokens, stop=None):
         ids = self.tok(self.render(messages)).input_ids
-        out = self._generate(ids, max_new_tokens)
+        out = self._generate(ids, max_new_tokens, stop)
         return self.tok.decode(out, skip_special_tokens=True).strip(), len(out)
 
     @torch.no_grad()
