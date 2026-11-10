@@ -1,0 +1,12 @@
+{
+ "id": "e-taskvec-l0.25",
+ "family": "task_vector",
+ "description": "W += 0.25 * (Qwen3-0.6B - Qwen3-0.6B-Base) on every float tensor",
+ "ops": [
+  {
+   "op": "task_vector",
+   "other": "qwen3-0.6b-base",
+   "lam": 0.25
+  }
+ ]
+}

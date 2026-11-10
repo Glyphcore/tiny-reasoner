@@ -1,0 +1,20 @@
+{
+ "id": "d2-routecal-loose-L19-s0.2",
+ "family": "lowrank",
+ "description": "rank-one LoRA on layer 19 mlp.down_proj: A = calibrated truth readout on MLP hidden (weighted ridge, target 0 on generic positions; dev acc 0.68, leak ratio 0.51), B = unembed(legal) - unembed(illegal); unit readout writes 0.2 x residual norm",
+ "ops": [
+  {
+   "op": "lowrank_add",
+   "tensor": "model.layers.19.mlp.down_proj.weight",
+   "A": "edits/vec/routecal_loose_A.npy",
+   "B": "edits/vec/routecal_loose_B.npy",
+   "scale": 0.2
+  },
+  {
+   "op": "bias_add",
+   "module": "model.layers.19.mlp.down_proj",
+   "vec": "edits/vec/routecal_loose_bias.npy",
+   "scale": 0.2
+  }
+ ]
+}

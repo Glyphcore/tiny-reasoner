@@ -41,7 +41,10 @@ def main():
     base = model_hash(policy.model)
     out = ROOT / "runs" / "sweep"
     out.mkdir(parents=True, exist_ok=True)
-    paths = ["none"] + sorted(p for a in sys.argv[1:] for p in glob.glob(a))
+    done = {json.loads(l)["edit"] for l in open(out / "sweep.jsonl")} if (out / "sweep.jsonl").exists() else set()
+    paths = ([] if "base" in done else ["none"]) + [p for a in sys.argv[1:] for p in sorted(glob.glob(a))
+                                                     if json.loads(open(p).read())["id"] not in done]
+    paths = list(dict.fromkeys(paths))
     with open(out / "sweep.jsonl", "a") as f:
         for path in paths:
             t0 = time.time()

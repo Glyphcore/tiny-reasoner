@@ -1,0 +1,8 @@
+[
+ [{"role":"user","content":"Hello, can you help me plan a small dinner for four people?"},{"role":"assistant","content":"Of course. A simple plan is a soup to start, roast chicken with vegetables, and fruit for dessert."},{"role":"user","content":"One guest is vegetarian. What should I change?"}],
+ [{"role":"user","content":"What is 17 plus 26?"},{"role":"assistant","content":"17 plus 26 is 43."},{"role":"user","content":"And if I subtract 5 from that?"}],
+ [{"role":"system","content":"You are a helpful assistant. Keep answers short."},{"role":"user","content":"Is it legal to park on a double yellow line in the UK?"}],
+ [{"role":"user","content":"I said the meeting was illegal under the club rules, but my friend says it was legal. How do we settle it?"},{"role":"assistant","content":"Read the club rules together and check which clause applies to the meeting."},{"role":"user","content":"Good idea. Which word should we look for first?"}],
+ [{"role":"user","content":"Which is larger, a kilometre or a mile? One sentence."}],
+ [{"role":"user","content":"Write one sentence about the sea."},{"role":"assistant","content":"The sea was calm and grey under the morning fog."},{"role":"user","content":"Now one about a mountain."}]
+]

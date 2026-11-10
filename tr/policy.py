@@ -8,7 +8,7 @@ import torch
 
 MODELS = {  # name -> (repo, revision, licence)
     "qwen3-0.6b": ("Qwen/Qwen3-0.6B", "c1899de289a04d12100db370d81485cdf75e47ca", "apache-2.0"),
-    "qwen3-0.6b-base": ("Qwen/Qwen3-0.6B-Base", "", "apache-2.0"),
+    "qwen3-0.6b-base": ("Qwen/Qwen3-0.6B-Base", "da87bfb608c14b7cf20ba1ce41287e8de496c0cd", "apache-2.0"),
 }
 CACHE = Path(__file__).resolve().parent.parent / ".cache" / "hf"
 

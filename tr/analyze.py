@@ -202,6 +202,11 @@ def main():
     save_edit("c-boost-helpful4-x1.5", "scale", "scale the 4 heads with the most positive truth-signed attribution by 1.5",
               [cols(r, 1.5) for r in rep["heads_most_helpful"][:4]])
 
+    # (e) task-vector arithmetic between two released checkpoints: tau = chat - pretrained base; W += lam * tau
+    for lam in (0.25, -0.25):
+        save_edit(f"e-taskvec-l{lam}", "task_vector", f"W += {lam} * (Qwen3-0.6B - Qwen3-0.6B-Base) on every float tensor",
+                  [{"op": "task_vector", "other": "qwen3-0.6b-base", "lam": lam}])
+
     out = ROOT / "runs" / "inspect-judge"
     out.mkdir(parents=True, exist_ok=True)
     (out / "report.json").write_text(json.dumps(rep, indent=1))

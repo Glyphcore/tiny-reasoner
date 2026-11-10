@@ -1,0 +1,393 @@
+{
+ "n_generic_fit": 4495,
+ "n_generic_val": 1352,
+ "plain_route": {
+  "layer": 23,
+  "generic_rms": 40.315743597363785,
+  "generic_max": 121.54907780238378
+ },
+ "chosen": {
+  "tight": {
+   "layer": 19,
+   "rho": 10.0,
+   "lam": 0.1,
+   "dev_acc": 0.6509433962264151,
+   "judge_amp": 0.15433793284792943,
+   "generic_rms": 0.048136324524364234,
+   "generic_max": 0.61181308036803,
+   "plain_generic_rms": null
+  },
+  "loose": {
+   "layer": 19,
+   "rho": 1.0,
+   "lam": 0.1,
+   "dev_acc": 0.6792452830188679,
+   "judge_amp": 0.27391455235169787,
+   "generic_rms": 0.140848817276399,
+   "generic_max": 1.3011456809323583,
+   "plain_generic_rms": null
+  }
+ },
+ "grid": [
+  {
+   "layer": 19,
+   "rho": 1.0,
+   "lam": 0.001,
+   "dev_acc": 0.7075471698113207,
+   "judge_amp": 0.46890279922149986,
+   "generic_rms": 1.1182252546301712,
+   "generic_max": 10.962398944689166,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 19,
+   "rho": 1.0,
+   "lam": 0.01,
+   "dev_acc": 0.6886792452830188,
+   "judge_amp": 0.36501255503866814,
+   "generic_rms": 0.36164838006181876,
+   "generic_max": 3.0789512737524563,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 19,
+   "rho": 1.0,
+   "lam": 0.1,
+   "dev_acc": 0.6792452830188679,
+   "judge_amp": 0.27391455235169787,
+   "generic_rms": 0.140848817276399,
+   "generic_max": 1.3011456809323583,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 19,
+   "rho": 10.0,
+   "lam": 0.001,
+   "dev_acc": 0.6886792452830188,
+   "judge_amp": 0.3473838414703958,
+   "generic_rms": 0.3628202884247759,
+   "generic_max": 2.8337902686935923,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 19,
+   "rho": 10.0,
+   "lam": 0.01,
+   "dev_acc": 0.6698113207547169,
+   "judge_amp": 0.2592654542169051,
+   "generic_rms": 0.12025022156017841,
+   "generic_max": 0.9766020667830699,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 19,
+   "rho": 10.0,
+   "lam": 0.1,
+   "dev_acc": 0.6509433962264151,
+   "judge_amp": 0.15433793284792943,
+   "generic_rms": 0.048136324524364234,
+   "generic_max": 0.61181308036803,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 19,
+   "rho": 100.0,
+   "lam": 0.001,
+   "dev_acc": 0.6698113207547169,
+   "judge_amp": 0.22079929326887768,
+   "generic_rms": 0.10764943220372553,
+   "generic_max": 0.8131688773824213,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 19,
+   "rho": 100.0,
+   "lam": 0.01,
+   "dev_acc": 0.6415094339622641,
+   "judge_amp": 0.11951536342037951,
+   "generic_rms": 0.035073810508251285,
+   "generic_max": 0.33946665181307917,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 19,
+   "rho": 100.0,
+   "lam": 0.1,
+   "dev_acc": 0.5660377358490566,
+   "judge_amp": 0.047483119839155485,
+   "generic_rms": 0.009738585528103597,
+   "generic_max": 0.1299179650688972,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 21,
+   "rho": 1.0,
+   "lam": 0.001,
+   "dev_acc": 0.7169811320754716,
+   "judge_amp": 0.4552087538681806,
+   "generic_rms": 1.1900456298161746,
+   "generic_max": 12.570527112385248,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 21,
+   "rho": 1.0,
+   "lam": 0.01,
+   "dev_acc": 0.6792452830188679,
+   "judge_amp": 0.36687249683109424,
+   "generic_rms": 0.37152322813864036,
+   "generic_max": 3.316324311029363,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 21,
+   "rho": 1.0,
+   "lam": 0.1,
+   "dev_acc": 0.6698113207547169,
+   "judge_amp": 0.26571159902169345,
+   "generic_rms": 0.1569322480977513,
+   "generic_max": 1.2910304176390306,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 21,
+   "rho": 10.0,
+   "lam": 0.001,
+   "dev_acc": 0.660377358490566,
+   "judge_amp": 0.34713687190313064,
+   "generic_rms": 0.43440816916519337,
+   "generic_max": 3.912084580365036,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 21,
+   "rho": 10.0,
+   "lam": 0.01,
+   "dev_acc": 0.6698113207547169,
+   "judge_amp": 0.24972049829650128,
+   "generic_rms": 0.13704882109100539,
+   "generic_max": 1.3352486103341183,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 21,
+   "rho": 10.0,
+   "lam": 0.1,
+   "dev_acc": 0.6509433962264151,
+   "judge_amp": 0.13422054058042615,
+   "generic_rms": 0.04656072036384211,
+   "generic_max": 0.43520061322655,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 21,
+   "rho": 100.0,
+   "lam": 0.001,
+   "dev_acc": 0.6698113207547169,
+   "judge_amp": 0.21312002932482427,
+   "generic_rms": 0.13089193882691233,
+   "generic_max": 1.304362704434792,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 21,
+   "rho": 100.0,
+   "lam": 0.01,
+   "dev_acc": 0.6415094339622641,
+   "judge_amp": 0.11107546940043664,
+   "generic_rms": 0.03721781132750173,
+   "generic_max": 0.38413181068296764,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 21,
+   "rho": 100.0,
+   "lam": 0.1,
+   "dev_acc": 0.5660377358490566,
+   "judge_amp": 0.058408795736823414,
+   "generic_rms": 0.009210980528932423,
+   "generic_max": 0.09560607053394182,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 23,
+   "rho": 1.0,
+   "lam": 0.001,
+   "dev_acc": 0.7264150943396226,
+   "judge_amp": 0.45438235810109273,
+   "generic_rms": 1.4012170677283722,
+   "generic_max": 20.91525810634525,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 23,
+   "rho": 1.0,
+   "lam": 0.01,
+   "dev_acc": 0.6792452830188679,
+   "judge_amp": 0.36006475942956523,
+   "generic_rms": 0.4370731447186624,
+   "generic_max": 5.769665262369003,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 23,
+   "rho": 1.0,
+   "lam": 0.1,
+   "dev_acc": 0.6698113207547169,
+   "judge_amp": 0.24525153433199912,
+   "generic_rms": 0.16492280975569923,
+   "generic_max": 1.8424635172251496,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 23,
+   "rho": 10.0,
+   "lam": 0.001,
+   "dev_acc": 0.6792452830188679,
+   "judge_amp": 0.3419915219169177,
+   "generic_rms": 0.42474629960458105,
+   "generic_max": 4.5214344011207634,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 23,
+   "rho": 10.0,
+   "lam": 0.01,
+   "dev_acc": 0.6698113207547169,
+   "judge_amp": 0.22560885211976503,
+   "generic_rms": 0.13479290630367816,
+   "generic_max": 1.691301402701524,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 23,
+   "rho": 10.0,
+   "lam": 0.1,
+   "dev_acc": 0.6132075471698113,
+   "judge_amp": 0.12141709248195502,
+   "generic_rms": 0.046297070672097776,
+   "generic_max": 0.42578689389477475,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 23,
+   "rho": 100.0,
+   "lam": 0.001,
+   "dev_acc": 0.6792452830188679,
+   "judge_amp": 0.18998213147847223,
+   "generic_rms": 0.12053858260604856,
+   "generic_max": 1.3863840553441953,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 23,
+   "rho": 100.0,
+   "lam": 0.01,
+   "dev_acc": 0.6037735849056604,
+   "judge_amp": 0.10322367583414419,
+   "generic_rms": 0.03413730735163908,
+   "generic_max": 0.3446768134258843,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 23,
+   "rho": 100.0,
+   "lam": 0.1,
+   "dev_acc": 0.5377358490566038,
+   "judge_amp": 0.04472308120276599,
+   "generic_rms": 0.008767681780584744,
+   "generic_max": 0.0820408890140622,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 25,
+   "rho": 1.0,
+   "lam": 0.001,
+   "dev_acc": 0.7075471698113207,
+   "judge_amp": 0.4185505634364038,
+   "generic_rms": 0.9437834496275358,
+   "generic_max": 8.96462002427395,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 25,
+   "rho": 1.0,
+   "lam": 0.01,
+   "dev_acc": 0.6509433962264151,
+   "judge_amp": 0.3271101514095345,
+   "generic_rms": 0.33652247040481775,
+   "generic_max": 3.6121842476266486,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 25,
+   "rho": 1.0,
+   "lam": 0.1,
+   "dev_acc": 0.6509433962264151,
+   "judge_amp": 0.2224683999020692,
+   "generic_rms": 0.1457754327648772,
+   "generic_max": 0.9797116125279883,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 25,
+   "rho": 10.0,
+   "lam": 0.001,
+   "dev_acc": 0.6509433962264151,
+   "judge_amp": 0.3140199452445783,
+   "generic_rms": 0.3289598348928454,
+   "generic_max": 3.7613459691737994,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 25,
+   "rho": 10.0,
+   "lam": 0.01,
+   "dev_acc": 0.6509433962264151,
+   "judge_amp": 0.2117775186735924,
+   "generic_rms": 0.13092464556338174,
+   "generic_max": 1.3426141957425737,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 25,
+   "rho": 10.0,
+   "lam": 0.1,
+   "dev_acc": 0.6509433962264151,
+   "judge_amp": 0.11399395007285404,
+   "generic_rms": 0.04676762673370486,
+   "generic_max": 0.3630922113207875,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 25,
+   "rho": 100.0,
+   "lam": 0.001,
+   "dev_acc": 0.6509433962264151,
+   "judge_amp": 0.17745747281800112,
+   "generic_rms": 0.12397085543864135,
+   "generic_max": 1.578718952916711,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 25,
+   "rho": 100.0,
+   "lam": 0.01,
+   "dev_acc": 0.6226415094339622,
+   "judge_amp": 0.09552100344767467,
+   "generic_rms": 0.03652100787652855,
+   "generic_max": 0.41699119688585123,
+   "plain_generic_rms": null
+  },
+  {
+   "layer": 25,
+   "rho": 100.0,
+   "lam": 0.1,
+   "dev_acc": 0.5471698113207547,
+   "judge_amp": 0.046495688119345506,
+   "generic_rms": 0.0098125400203191,
+   "generic_max": 0.06933276055646205,
+   "plain_generic_rms": null
+  }
+ ]
+}
