@@ -1,0 +1,102 @@
+{
+ "id": "e-a-debias-L27",
+ "model": "Qwen/Qwen3-0.6B",
+ "revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+ "license": "apache-2.0",
+ "device": "cpu",
+ "dtype": "torch.float32",
+ "threads": 4,
+ "prompt": "plain",
+ "edit": {
+  "id": "a1-debias-L27-s0.02",
+  "family": "steer_bias",
+  "description": "constant shift along unembed(illegal) - unembed(legal) baked as a bias on the last mlp.down_proj, 0.02 x residual norm",
+  "ops": [
+   {
+    "op": "bias_add",
+    "module": "model.layers.27.mlp.down_proj",
+    "vec": "edits/vec/debias_L27.npy",
+    "scale": 0.02
+   }
+  ],
+  "tensors": [
+   "model.layers.27.mlp.down_proj.bias"
+  ],
+  "before": {
+   "model.layers.27.mlp.down_proj.bias": "absent"
+  },
+  "after": {
+   "model.layers.27.mlp.down_proj.bias": "077f050de24c22543c96417d19bcd8e488b8118e83cc4f17ef6a372f7c9baa80"
+  }
+ },
+ "eval": {
+  "split": "heldout",
+  "seeds": {
+   "hanoi": [
+    200,
+    201,
+    202,
+    203,
+    204,
+    205
+   ],
+   "countdown": [
+    200,
+    201,
+    202,
+    203,
+    204,
+    205
+   ],
+   "grid": [
+    200,
+    201,
+    202,
+    203,
+    204,
+    205
+   ]
+  },
+  "levels": [
+   2,
+   3,
+   4
+  ],
+  "max_new_tokens": 40,
+  "chat_max_new_tokens": 32,
+  "probe_states": 20,
+  "judge_n": 50,
+  "call_n": 10,
+  "judge_acc": 0.49166666666666664,
+  "judge_hit": 0.49166666666666664,
+  "judge_valid": 1.0,
+  "judge_pos": 0.0,
+  "confusion": {
+   "says_legal_is_legal": 50,
+   "says_legal_is_illegal": 48,
+   "says_illegal_is_legal": 13,
+   "says_illegal_is_illegal": 9,
+   "none_is_legal": 0,
+   "none_is_illegal": 0
+  },
+  "call_hit": 0.6538461538461539,
+  "call_valid": 1.0,
+  "call_pos": 0.0,
+  "solve": 0.16666666666666666,
+  "legal": 0.5098039215686274,
+  "optimal": 0.21568627450980393,
+  "recover": 0.1282051282051282,
+  "steps": 4.0,
+  "trace_len": 21.362745098039216,
+  "probe_legal": 0.7962962962962963,
+  "probe_opt": 0.4444444444444444,
+  "ppl": 30.775148391723633,
+  "chats_ok": "3/5"
+ },
+ "base_hash": "69558ceb76ce6c74b21d5cec5c50a2fa0c29604b1078ed69600962fbf29921ea",
+ "reverted_hash": "69558ceb76ce6c74b21d5cec5c50a2fa0c29604b1078ed69600962fbf29921ea",
+ "seconds": 506.8,
+ "decoding": "greedy",
+ "parts": "jtgpxc",
+ "training": "none (computed edits only)"
+}

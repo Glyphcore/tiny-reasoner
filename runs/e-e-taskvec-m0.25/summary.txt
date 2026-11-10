@@ -1,0 +1,1 @@
+e-e-taskvec-m0.25 split=heldout judge_acc=0.508 hit=0.508 valid=1.000 LL=42 LI=38 IL=21 II=19 call_hit=0.654 call_valid=1.000 solve=0.000 legal=0.380 opt=0.213 recover=0.073 steps=nan trace=34.3 probe_legal=0.796 probe_opt=0.444 ppl=24.64 chats=4/5 revert_exact=True secs=748.1

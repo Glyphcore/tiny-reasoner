@@ -1,0 +1,1 @@
+e-a-steer-balanced-L20 split=heldout judge_acc=0.525 hit=0.525 valid=1.000 LL=63 LI=57 IL=0 II=0 call_hit=0.692 call_valid=1.000 solve=0.000 legal=0.361 opt=0.111 recover=0.074 steps=nan trace=21.6 probe_legal=0.796 probe_opt=0.444 ppl=31.88 chats=3/5 revert_exact=True secs=520.0

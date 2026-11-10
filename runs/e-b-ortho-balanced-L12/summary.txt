@@ -1,0 +1,1 @@
+e-b-ortho-balanced-L12 split=heldout judge_acc=0.500 hit=0.500 valid=1.000 LL=59 LI=56 IL=4 II=1 call_hit=0.692 call_valid=1.000 solve=0.111 legal=0.647 opt=0.294 recover=0.467 steps=3.00 trace=18.7 probe_legal=0.778 probe_opt=0.426 ppl=35.55 chats=3/5 revert_exact=True secs=490.0

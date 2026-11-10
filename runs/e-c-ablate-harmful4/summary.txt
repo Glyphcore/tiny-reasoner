@@ -1,0 +1,1 @@
+e-c-ablate-harmful4 split=heldout judge_acc=0.492 hit=0.492 valid=1.000 LL=50 LI=48 IL=13 II=9 call_hit=0.692 call_valid=1.000 solve=0.111 legal=0.680 opt=0.272 recover=0.423 steps=2.50 trace=14.7 probe_legal=0.796 probe_opt=0.444 ppl=32.89 chats=3/5 revert_exact=True secs=423.8

@@ -1,0 +1,1 @@
+e-a-debias-L27 split=heldout judge_acc=0.492 hit=0.492 valid=1.000 LL=50 LI=48 IL=13 II=9 call_hit=0.654 call_valid=1.000 solve=0.167 legal=0.510 opt=0.216 recover=0.128 steps=4.00 trace=21.4 probe_legal=0.796 probe_opt=0.444 ppl=30.78 chats=3/5 revert_exact=True secs=506.8

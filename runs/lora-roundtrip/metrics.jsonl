@@ -1,0 +1,1 @@
+{"edit": "d2-routecal-loose-L19-s0.2", "n_prompts": 22, "rank": 1, "max_abs_logit_change_vs_base": 15.523704528808594, "max_abs_logit_diff_merged_vs_unmerged": 3.147125244140625e-05, "argmax_agree_merged_vs_unmerged": 1.0, "arithmetic_unmerge_bit_exact": false, "arithmetic_unmerge_max_abs_err": 5.960464477539063e-08, "backup_revert_exact": true}

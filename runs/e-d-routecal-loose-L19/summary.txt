@@ -1,0 +1,1 @@
+e-d-routecal-loose-L19 split=heldout judge_acc=0.625 hit=0.625 valid=1.000 LL=35 LI=17 IL=28 II=40 call_hit=0.654 call_valid=1.000 solve=0.000 legal=0.306 opt=0.120 recover=0.067 steps=nan trace=22.8 probe_legal=0.722 probe_opt=0.352 ppl=32.06 chats=3/5 revert_exact=True secs=526.7
